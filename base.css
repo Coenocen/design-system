@@ -1,0 +1,60 @@
+/* ═══════════════════════════════════════════════════════════════
+   Coen Design System — Base (reset + typografie + achtergrond)
+   Laad na tokens.css
+   ═══════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--fs-md);
+}
+
+@keyframes sunrise {
+  0%   { background-position: 50% 100%; background-size: 200% 200%; }
+  30%  { background-position: 50% 60%;  background-size: 180% 180%; }
+  100% { background-position: 50% 30%;  background-size: 160% 160%; }
+}
+
+body {
+  font-family: var(--font);
+  background: linear-gradient(
+    160deg,
+    var(--grad-1) 0%,
+    var(--grad-2) 25%,
+    var(--grad-3) 45%,
+    var(--grad-4) 65%,
+    var(--grad-5) 100%
+  );
+  background-attachment: fixed;
+  color: var(--ink);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  line-height: 1.5;
+  animation: sunrise 3s ease-out forwards;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4 { font-weight: 600; letter-spacing: -.1px; color: var(--ink); }
+h2 { font-size: 1.25rem; }
+h3 { font-size: 1rem; }
+
+p { color: var(--ink2); }
+
+/* Material Symbols icoon-utility */
+.mi     { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20; }
+.mi-fill{ font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 20; }
+.mi-sm  { font-size: 18px; }
+.mi-lg  { font-size: 24px; }
+.mi-xl  { font-size: 32px; }
+
+/* Scrollbars (subtiel, sluit aan bij glass-look) */
+::-webkit-scrollbar         { width: 4px; height: 4px; }
+::-webkit-scrollbar-thumb   { background: #d0d0d0; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #b0b0b0; }

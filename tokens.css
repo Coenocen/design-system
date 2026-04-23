@@ -1,0 +1,103 @@
+/* ═══════════════════════════════════════════════════════════════
+   Coen Design System — Tokens
+   Versie 1.0 — geëxtraheerd uit MijnCRM
+   Gebruik deze variabelen in al je apps voor consistente styling.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Ink / grijstinten ── */
+  --ink:   #252628;
+  --ink2:  #57595c;
+  --ink3:  #919497;
+  --paper: #f5f5f5;
+  --paper2:#e7e8e9;
+  --line:  #d5d7d8;
+
+  /* ── Accent (primair — rood-oranje) ── */
+  --accent:     #e33b2a;
+  --accentd:    #c02920;
+  --accentl:    #f7c4bf;
+  --accent100:  #f7c4bf;
+  --accent300:  #eb766a;
+  --accent500:  #e33b2a;
+
+  /* ── Statuskleuren ── */
+  --green:  #63b34b;  --greenl: #d0e8c9;   /* success / hours */
+  --amber:  #f9c700;  --amberl: #fdeeb2;   /* warning / planning */
+  --blue:   #3996d2;  --bluel:  #c4dff1;   /* info / invoicing */
+  --purple: #a69cf3;  --purplel:#eeecfb;   /* dashboard */
+  --danger: #e33b2a;  --dangerl:#f7c4bf;   /* error */
+
+  /* ── Business-type kleuren ── */
+  --c-dienst-100:rgba(37,99,235,.05);
+  --c-dienst-300:rgba(37,99,235,.2);
+  --c-dienst-500:#2563eb;
+  --c-dienst-600:#1d4ed8;
+  --c-product-100:rgba(124,58,237,.05);
+  --c-product-500:#7c3aed;
+  --c-inkoop-100:rgba(5,150,105,.05);
+  --c-inkoop-500:#059669;
+
+  /* ── Typografie ── */
+  --font:  'Work Sans', -apple-system, sans-serif;
+  --fs-xs: .72rem;   /* ~11.5px */
+  --fs-sm: .82rem;   /* ~13px */
+  --fs-md: 1rem;     /* 16px base */
+
+  /* ── Spacing ── */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+
+  /* ── Radius — ALTIJD 8px voor kaarten/knoppen/inputs ── */
+  --radius:         8px;
+  --radius-card:    8px;
+  --radius-btn:     8px;
+  --radius-input:   8px;
+  --radius-badge:   4px;
+  --radius-tag:     4px;
+  --radius-pill:    999px;
+  --radius-modal:   12px;
+
+  /* ── Hoogtes ── */
+  --h-btn:    32px;
+  --h-btn-sm: 26px;
+  --h-btn-md: 34px;
+  --h-btn-lg: 40px;
+  --h-input:  36px;
+
+  /* ── Schaduw ── */
+  --s1: 0 1px 3px  rgba(0,0,0,.07);
+  --s2: 0 2px 8px  rgba(0,0,0,.09);
+  --s3: 0 6px 24px rgba(0,0,0,.13);
+
+  /* ── Glass-effect (signature look) ── */
+  --glass-bg:     rgba(255,255,255,.55);
+  --glass-blur:   20px;
+  --glass-border: rgba(255,255,255,.35);
+  --glass-shadow: 0 8px 32px rgba(0,0,0,.08);
+
+  /* ── Sidebar ── */
+  --sidebar-bg:           rgba(255,255,255,.45);
+  --sidebar-border:       rgba(255,255,255,.3);
+  --sidebar-item-hover:   rgba(255,255,255,.4);
+  --sidebar-item-active:  rgba(255,255,255,.55);
+  --sidebar-width:        220px;
+  --radius-sidebar-item:  8px;
+
+  /* ── Achtergrond gradient (zonsopgang) ── */
+  --grad-1:#c87832;
+  --grad-2:#d4896a;
+  --grad-3:#e8b5a0;
+  --grad-4:#8baed4;
+  --grad-5:#7a4f2a;
+
+  /* ── Badges / pills / tags ── */
+  --badge-fs:10px;  --badge-px:8px;   --badge-py:2px;   --badge-fw:600;
+  --tag-fs:11px;    --tag-px:8px;     --tag-py:1px;     --tag-fw:500;
+  --pill-fs:11px;   --pill-px:10px;   --pill-py:2px;    --pill-fw:600;
+  --pill-min-w:80px;
+}

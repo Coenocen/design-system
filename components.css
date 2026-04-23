@@ -1,0 +1,234 @@
+/* ═══════════════════════════════════════════════════════════════
+   Coen Design System — Componenten
+   Laad na tokens.css en base.css
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── GLASS PANEL ── signature look op kaarten/rijen */
+.glass {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-card);
+}
+
+/* ── KAARTEN ── */
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+.card-widget { border-radius: var(--radius-card); padding: 20px 22px; }
+
+/* ── PAGE HEADER ── */
+.ph { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-5); }
+.ph h2 { font-weight: 600; font-size: 1.25rem; color: var(--ink); }
+.ph p  { color: var(--ink3); font-size: var(--fs-xs); margin-top: 2px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════════════════════════ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: 0 var(--sp-4);
+  border: none;
+  font-family: var(--font);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color .2s, color .2s, border-color .2s, opacity .2s;
+  height: var(--h-btn);
+  border-radius: var(--radius-btn);
+}
+.btn .mi { font-size: 16px; line-height: 1; }
+.btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* Varianten */
+.bp  { background: var(--accent); color: #fff; }
+.bp:hover { opacity: .88; }
+
+.bg  { background: #fff; color: var(--ink2); border: 1px solid var(--line); }
+.bg:hover { border-color: var(--ink3); color: var(--ink); }
+
+.bgr { /* ghost / add-button stijl */
+  background: transparent;
+  color: #999;
+  border: 1px dashed rgba(0,0,0,.1);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  border-radius: var(--radius-btn);
+  height: 34px;
+  transition: color .15s;
+}
+.bgr:hover { color: #666; }
+
+/* Maten */
+.btn.sm { padding: 0 var(--sp-2); font-size: var(--fs-xs); height: var(--h-btn-sm); }
+.btn.md { height: var(--h-btn-md); padding: 0 var(--sp-3); }
+.btn.lg { height: var(--h-btn-lg); padding: 0 var(--sp-4); font-size: var(--fs-sm); }
+
+/* Icon-only knop */
+.ib {
+  background: none; border: none; cursor: pointer;
+  color: var(--ink3);
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px;
+  transition: all .12s;
+}
+.ib:hover { background: var(--paper2); color: var(--ink); }
+.ib svg   { width: 14px; height: 14px; display: block; }
+
+/* Add-button met dashed border */
+.btn-add {
+  display: flex; align-items: center; gap: 6px;
+  height: 34px; padding: 0 12px;
+  border: 1px dashed rgba(0,0,0,.1);
+  border-radius: var(--radius-btn);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font); font-size: var(--fs-xs); font-weight: 500;
+  color: #999;
+  transition: color .15s;
+}
+.btn-add:hover { color: #666; }
+
+/* ═══════════════════════════════════════════════════════════════
+   INPUTS & FORMS
+   ═══════════════════════════════════════════════════════════════ */
+
+.fg { display: flex; flex-direction: column; gap: 4px; margin-bottom: var(--sp-3); }
+.fg label {
+  font-size: var(--fs-xs);
+  color: var(--ink3);
+  font-weight: 500;
+}
+.fg input, .fg select, .fg textarea {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-input);
+  padding: 8px 12px;
+  font-family: var(--font);
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  background: #fff;
+  outline: none;
+  transition: border-color .12s;
+  height: var(--h-input);
+}
+.fg textarea { height: auto; min-height: 80px; resize: vertical; }
+.fg input:focus, .fg select:focus, .fg textarea:focus {
+  border-color: var(--accent);
+}
+
+/* Form-rij (2 kolommen) */
+.fr {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BADGES, PILLS, TAGS
+   ═══════════════════════════════════════════════════════════════ */
+
+.bdg {
+  display: inline-flex; align-items: center;
+  padding: var(--badge-py) var(--badge-px);
+  font-size: var(--badge-fs); font-weight: var(--badge-fw);
+  letter-spacing: .2px;
+  border-radius: var(--radius-badge);
+  white-space: nowrap;
+}
+
+.pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: var(--pill-py) var(--pill-px);
+  font-size: var(--pill-fs); font-weight: var(--pill-fw);
+  border-radius: var(--radius-pill);
+  min-width: var(--pill-min-w);
+}
+.pill-blue  { background: var(--bluel);   color: var(--blue); }
+.pill-green { background: var(--greenl);  color: var(--green); }
+.pill-amber { background: var(--amberl);  color: #8a6d00; }
+.pill-red   { background: var(--dangerl); color: var(--danger); }
+.pill-gray  { background: var(--paper2);  color: var(--ink2); }
+
+/* ═══════════════════════════════════════════════════════════════
+   LAYOUT — sidebar + main
+   ═══════════════════════════════════════════════════════════════ */
+
+.sidebar {
+  width: var(--sidebar-width);
+  min-height: 100vh;
+  background: var(--sidebar-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-right: 1px solid var(--sidebar-border);
+  display: flex; flex-direction: column;
+  position: fixed; top: 0; left: 0; z-index: 100;
+  overflow-y: auto; overflow-x: hidden;
+}
+.nl { /* nav label */
+  padding: 16px 20px 6px;
+  font-size: 10.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .8px;
+  color: var(--ink3);
+  user-select: none;
+}
+.ni { /* nav item */
+  display: flex; align-items: center; gap: 12px;
+  padding: 8px 16px; margin: 1px 8px;
+  border-radius: var(--radius-sidebar-item);
+  color: var(--ink2);
+  cursor: pointer;
+  font-size: 13px; font-weight: 500;
+  transition: all .12s;
+}
+.ni:hover { background: var(--sidebar-item-hover); color: var(--ink); }
+.ni.on    { background: var(--sidebar-item-active); color: var(--ink); }
+.ni .mi   { font-size: 18px; flex-shrink: 0; opacity: .6; }
+.ni.on .mi { opacity: 1; }
+
+.main {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  padding: var(--sp-6) 32px;
+  min-height: 100vh;
+  background: transparent;
+  overflow-x: hidden;
+  position: relative;
+}
+.main::before {
+  content: '';
+  position: fixed;
+  top: 0; left: var(--sidebar-width);
+  right: 0; bottom: 0;
+  background: rgba(255,255,255,.8);
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+.main > * { position: relative; z-index: 1; }
+
+/* ═══════════════════════════════════════════════════════════════
+   TOAST / NOTIFICATIE (placeholder — implementeer JS eromheen)
+   ═══════════════════════════════════════════════════════════════ */
+.toast {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  background: var(--ink); color: #fff;
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  font-size: var(--fs-sm);
+  box-shadow: var(--s3);
+  z-index: 10000;
+}
+.toast.success { background: var(--green); }
+.toast.error   { background: var(--danger); }
+.toast.info    { background: var(--blue); }
