@@ -1,0 +1,192 @@
+/* ═══════════════════════════════════════════════════════════════
+   Coen Design System — Tokens (v2)
+   Versie 2.0 — app-agnostisch, semantic layer, voorbereid op dark mode
+   Laad dit bestand vóór base.css en components.css.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ─────────────────────────────────────────────────────────────
+     1. PRIMITIEVE KLEUREN — bouwstenen, niet direct gebruiken in componenten
+     ───────────────────────────────────────────────────────────── */
+
+  /* Ink (neutrale grijstinten — tekst & lijnen) */
+  --ink:     #252628;
+  --ink-2:   #57595c;
+  --ink-3:   #919497;
+  --paper:   #f5f5f5;
+  --paper-2: #e7e8e9;
+  --line:    #d5d7d8;
+
+  /* Accent — primaire merkkleur (rood-oranje) */
+  --accent:      #e33b2a;
+  --accent-dark: #c02920;
+  --accent-100:  #f7c4bf;
+  --accent-300:  #eb766a;
+  --accent-500:  #e33b2a;
+
+  /* Status */
+  --green:  #63b34b;  --green-100:  #d0e8c9;
+  --amber:  #f9c700;  --amber-100:  #fdeeb2;
+  --blue:   #3996d2;  --blue-100:   #c4dff1;
+  --purple: #a69cf3;  --purple-100: #eeecfb;
+  --danger: #e33b2a;  --danger-100: #f7c4bf;
+
+  /* ─────────────────────────────────────────────────────────────
+     2. SEMANTIC TOKENS — gebruik deze in componenten
+     ───────────────────────────────────────────────────────────── */
+
+  /* Tekst */
+  --text-primary:   var(--ink);
+  --text-secondary: var(--ink-2);
+  --text-muted:     var(--ink-3);
+  --text-inverse:   #ffffff;
+  --text-accent:    var(--accent);
+
+  /* Oppervlakken */
+  --surface:          #ffffff;
+  --surface-subtle:   var(--paper);
+  --surface-sunken:   var(--paper-2);
+  --surface-inverse:  var(--ink);
+
+  /* Randen */
+  --border-subtle: var(--line);
+  --border-strong: var(--ink-3);
+  --border-accent: var(--accent);
+
+  /* Focus-state */
+  --focus-ring: 0 0 0 3px rgba(227, 59, 42, .25);
+
+  /* Status-achtergronden (inline alerts, badges) */
+  --bg-success: var(--green-100);
+  --bg-warning: var(--amber-100);
+  --bg-info:    var(--blue-100);
+  --bg-danger:  var(--danger-100);
+
+  --fg-success: var(--green);
+  --fg-warning: #8a6d00;
+  --fg-info:    var(--blue);
+  --fg-danger:  var(--danger);
+
+  /* ─────────────────────────────────────────────────────────────
+     3. TYPOGRAFIE
+     ───────────────────────────────────────────────────────────── */
+
+  --font: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'SF Mono', Menlo, Consolas, monospace;
+
+  --fs-xs: .72rem;   /* ~11.5px — labels, meta */
+  --fs-sm: .82rem;   /* ~13px   — UI body */
+  --fs-md: 1rem;     /* 16px    — document base */
+  --fs-lg: 1.125rem; /* ~18px   — h3 */
+  --fs-xl: 1.25rem;  /* ~20px   — h2 */
+  --fs-2xl: 1.5rem;  /* ~24px   — h1 */
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+
+  --lh-tight:  1.25;
+  --lh-normal: 1.5;
+
+  /* ─────────────────────────────────────────────────────────────
+     4. SPACING — 4px ritme
+     ───────────────────────────────────────────────────────────── */
+
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-7: 32px;
+  --sp-8: 40px;
+
+  /* ─────────────────────────────────────────────────────────────
+     5. RADIUS — 8px standaard
+     ───────────────────────────────────────────────────────────── */
+
+  --radius:        8px;
+  --radius-sm:     4px;    /* badges, tags */
+  --radius-md:     8px;    /* buttons, inputs, cards */
+  --radius-lg:     12px;   /* modals */
+  --radius-pill:   999px;
+
+  /* Alias voor leesbaarheid */
+  --radius-card:   var(--radius-md);
+  --radius-btn:    var(--radius-md);
+  --radius-input:  var(--radius-md);
+  --radius-badge:  var(--radius-sm);
+  --radius-modal:  var(--radius-lg);
+
+  /* ─────────────────────────────────────────────────────────────
+     6. HOOGTES — controls
+     ───────────────────────────────────────────────────────────── */
+
+  --h-btn-sm: 26px;
+  --h-btn:    32px;
+  --h-btn-md: 34px;
+  --h-btn-lg: 40px;
+  --h-input:  36px;
+
+  /* ─────────────────────────────────────────────────────────────
+     7. SCHADUW
+     ───────────────────────────────────────────────────────────── */
+
+  --shadow-sm: 0 1px 3px  rgba(0, 0, 0, .07);
+  --shadow-md: 0 2px 8px  rgba(0, 0, 0, .09);
+  --shadow-lg: 0 6px 24px rgba(0, 0, 0, .13);
+  --shadow-xl: 0 12px 48px rgba(0, 0, 0, .18);
+
+  /* ─────────────────────────────────────────────────────────────
+     8. GLASS — signature oppervlakte-stijl (optioneel per app)
+     ───────────────────────────────────────────────────────────── */
+
+  --glass-bg:     rgba(255, 255, 255, .55);
+  --glass-blur:   20px;
+  --glass-border: rgba(255, 255, 255, .35);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, .08);
+
+  /* ─────────────────────────────────────────────────────────────
+     9. LAYOUT — overridable per app
+     ───────────────────────────────────────────────────────────── */
+
+  --sidebar-width: 220px;
+  --container-max: 1200px;
+
+  /* ─────────────────────────────────────────────────────────────
+    10. MOTION
+     ───────────────────────────────────────────────────────────── */
+
+  --transition-fast:   .12s ease;
+  --transition-normal: .2s ease;
+  --transition-slow:   .3s ease;
+
+  /* ─────────────────────────────────────────────────────────────
+    11. Z-INDEX — stacking order
+     ───────────────────────────────────────────────────────────── */
+
+  --z-base:       1;
+  --z-dropdown:   100;
+  --z-sticky:     200;
+  --z-sidebar:    300;
+  --z-modal:      1000;
+  --z-toast:      2000;
+  --z-tooltip:    3000;
+}
+
+/* ───────────────────────────────────────────────────────────────
+   Dark mode (nog niet inhoudelijk ingevuld — alleen hook)
+   Activeer door <html data-theme="dark"> te zetten.
+   Overschrijf alleen de SEMANTIC tokens, niet de primitieven.
+   ─────────────────────────────────────────────────────────────── */
+
+[data-theme="dark"] {
+  /* Placeholder voor toekomstige dark-mode-overrides.
+     Voorbeeld:
+     --text-primary: #f5f5f5;
+     --surface: #1b1c1e;
+     --surface-subtle: #252628;
+     --border-subtle: #3a3c3f;
+  */
+}
