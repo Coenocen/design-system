@@ -14,19 +14,40 @@
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
+/* Klikbare card: hover-feedback. Apps kunnen ook .card-interactive of
+   data-clickable gebruiken — voor nu is hover universeel. */
+.card:hover { box-shadow: var(--shadow-md, var(--shadow-sm)); }
+
+/* Utility: card met direct padding (zonder aparte header/body) */
+.card-padded { padding: var(--sp-5); }
 
 .card-header {
   padding: var(--sp-4) var(--sp-5);
   border-bottom: 1px solid var(--border-subtle);
   font-weight: var(--fw-semi);
   color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+.card-header h3 {
+  margin: 0;
+  font-size: var(--fs-md, 0.95rem);
+  font-weight: var(--fw-semi);
+  color: var(--text-primary);
 }
 .card-body { padding: var(--sp-5); }
 .card-footer {
-  padding: var(--sp-4) var(--sp-5);
+  padding: var(--sp-3) var(--sp-5);
   border-top: 1px solid var(--border-subtle);
   background: var(--surface-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-2);
 }
 
 /* Glass-variant (optioneel, voor apps met gradient-achtergrond) */
