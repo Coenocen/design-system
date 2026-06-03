@@ -300,6 +300,128 @@
   min-height: 100vh;
 }
 
+/* ─── Sidebar — uitgebreide sub-componenten ─────────────────────
+   Brand-block bovenaan, section-dividers tussen nav-groepen,
+   footer met user-card + logout. Apps mogen specifieke kleuren/
+   sizes overriden zonder de basis-structuur kapot te maken. */
+
+.sidebar-brand {
+  padding: var(--sp-5) var(--sp-5) var(--sp-4);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.sidebar-brand h1 {
+  margin: 0;
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+.sidebar-brand span {
+  display: block;
+  margin-top: 2px;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: var(--sp-3) 0;
+  overflow-y: auto;
+}
+
+.sidebar-section {
+  padding: var(--sp-3) var(--sp-5) var(--sp-1);
+  margin-top: var(--sp-2);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--sp-3);
+}
+.sidebar-section:first-child,
+.sidebar-section.no-divider {
+  border-top: none;
+  padding-top: var(--sp-2);
+}
+
+/* nav-item icon-slot + active-indicator (border-left).
+   Bovenop de basis .nav-item uit het LAYOUT-blok hierboven. */
+.nav-item .nav-icon {
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-item .nav-icon .icon { font-size: 20px; opacity: 0.85; }
+.nav-item:hover .nav-icon .icon,
+.nav-item.active .nav-icon .icon { opacity: 1; }
+
+.nav-item .nav-badge {
+  margin-left: auto;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: var(--fw-bold);
+  padding: 1px 6px;
+  border-radius: 10px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.sidebar-footer {
+  padding: var(--sp-4) var(--sp-5);
+  border-top: 1px solid var(--border-subtle);
+  font-size: var(--fs-sm);
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.sidebar-user .user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  flex-shrink: 0;
+  object-fit: cover;  /* werkt voor <img class="user-avatar"> ook */
+}
+.sidebar-user .user-info { flex: 1; min-width: 0; }
+.sidebar-user .user-name {
+  color: var(--text-primary);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sidebar-user .user-role {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.sidebar-logout {
+  background: none;
+  border: 0;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: var(--sp-1);
+  display: flex;
+  align-items: center;
+  transition: color var(--transition-fast);
+}
+.sidebar-logout:hover { color: var(--danger); }
+
 /* ═══════════════════════════════════════════════════════════════
    MODAL
    ═══════════════════════════════════════════════════════════════ */
