@@ -28,7 +28,7 @@
   --grijs-700:    #333333;
 
   /* ── Tekst-hiërarchie (GA4-stijl) ──────────────────────────── */
-  --text-primary:   #1b1b1b;   /* Hoofdtekst, koppen */
+  --text-primary:   #0a0a0a;   /* Hoofdtekst, koppen — Jugoo CMS "hard black" */
   --text-default:   #3C4043;   /* Body */
   --text-secondary: #5F6368;   /* Secundair, labels */
   --text-tertiary:  #80868B;   /* Subtiel, meta-info */
