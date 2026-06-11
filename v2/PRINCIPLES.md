@@ -146,8 +146,14 @@ Default state: **GEEN schaduw**. Schaduw verschijnt op hover, modals, dropdowns.
 | `.btn-lg` | 48px | 0 24px (sp-6) | 0.95rem | 4px |
 | Icon button | 32×32px | 0 | n.v.t. | 50% of 4px |
 
-Varianten: `.btn-primary` (accent bg) · `.btn-secondary` (white bg, accent border) ·
-`.btn-danger` (rood bg) · `.btn-ghost` (transparant)
+Varianten:
+- `.btn-primary` — accent-blauw, voor neutrale primaire acties (Opslaan, Versturen)
+- `.btn-add` — groen (`--groen-action` #16a34a), **verplicht voor alle knoppen die iets nieuws aanmaken** (Nieuwe offerte, +Project, +Taak, etc.). Bevat altijd `<span class="mi">add</span>` en het icoon staat in een halftransparant wit rondje
+- `.btn-secondary` — wit met accent-border (Annuleren, secundair)
+- `.btn-danger` — rood, voor destructieve acties (Verwijderen)
+- `.btn-ghost` — transparant, voor zwakke acties (Sluiten)
+
+Regel: **groen = nieuw aanmaken, blauw = uitvoeren/opslaan**. Apps moeten dit onderscheid hanteren zodat gebruikers in één oogopslag zien wat een actie doet.
 
 ### 5.2 Inputs
 

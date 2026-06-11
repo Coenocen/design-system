@@ -44,6 +44,8 @@
   /* ── Status-kleuren ────────────────────────────────────────── */
   --groen:         #7CB77B;
   --groen-light:   #e8f5e8;
+  --groen-action:  #16a34a;   /* Donkergroen — knoppen die iets nieuws aanmaken */
+  --groen-action-hover: #15803d;
   --geel:          #E8B84A;
   --geel-light:    #fdf6e3;
   --rood:          #D4633A;

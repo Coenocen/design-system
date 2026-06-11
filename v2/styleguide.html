@@ -49,6 +49,9 @@
     .btn { display:inline-flex; align-items:center; justify-content:center; gap: var(--sp-2); height: 44px; padding: 0 var(--sp-5); border-radius: var(--radius-sm); border:1px solid transparent; font-family: var(--font-family); font-size: var(--fs-sm); font-weight: var(--fw-medium); cursor:pointer; transition: all var(--transition); }
     .btn-primary { background: var(--accent); color:#fff; }
     .btn-primary:hover { background: var(--accent-hover); }
+    .btn-add { background: var(--groen-action); color:#fff; }
+    .btn-add:hover { background: var(--groen-action-hover); }
+    .btn-add .mi { background: rgba(255,255,255,.22); border-radius:50%; width:18px; height:18px; display:inline-flex; align-items:center; justify-content:center; font-size:14px; }
     .btn-secondary { background:#fff; color: var(--accent); border-color: var(--divider-soft); }
     .btn-secondary:hover { background: var(--accent-light); }
     .btn-danger { background: var(--rood); color:#fff; }
@@ -205,6 +208,13 @@
         <button class="btn btn-primary btn-sm">Sm — 40px</button>
         <button class="btn btn-primary">Default — 44px</button>
         <button class="btn btn-primary btn-lg">Lg — 48px</button>
+      </div>
+
+      <p class="label" style="margin: var(--sp-5) 0 var(--sp-2)">Add / create — groen-gevuld voor knoppen die iets nieuws aanmaken</p>
+      <div style="display:flex; gap: var(--sp-2); flex-wrap:wrap">
+        <button class="btn btn-add"><span class="mi">add</span>Nieuwe offerte</button>
+        <button class="btn btn-add"><span class="mi">add</span>Nieuw project</button>
+        <button class="btn btn-add"><span class="mi">add</span>Nieuwe taak</button>
       </div>
 
       <p class="label" style="margin: var(--sp-5) 0 var(--sp-2)">Met icoon</p>
