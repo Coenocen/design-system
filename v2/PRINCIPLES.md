@@ -208,7 +208,7 @@ Varianten: `.btn-primary` (accent bg) · `.btn-secondary` (white bg, accent bord
 ### 5.8 Iconen
 
 - Material Symbols Rounded
-- `wght: 400` (regular, matched Geist body)
+- `wght: 300` (light — dunner dan body voor luchtigere uitstraling)
 - Default size: 18-20px voor inline, 24px voor headers
 - Opacity 0.85 default, 1.0 op hover/active
 - Embed: `<span class="mi">naam</span>` — `.mi` zet font + variation-settings
