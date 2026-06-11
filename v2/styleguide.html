@@ -96,6 +96,13 @@
     .tab.on { color: var(--accent); border-bottom-color: var(--accent); font-weight: var(--fw-semi); }
 
     .mi { font-family: 'Material Symbols Rounded'; font-weight: normal; font-style: normal; font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20; }
+
+    .icon-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--sp-2); }
+    .icon-cell { display:flex; align-items:center; gap: var(--sp-2); padding: var(--sp-2) var(--sp-3); background:#fff; border:1px solid var(--divider-soft); border-radius: var(--radius-sm); }
+    .icon-cell .mi { font-size: 20px; color: var(--text-secondary); flex-shrink: 0; }
+    .icon-cell .name { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .icon-cat-title { font-size: var(--fs-xs); font-weight: var(--fw-semi); color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin: var(--sp-5) 0 var(--sp-2); }
+    .icon-cat-title:first-child { margin-top: 0; }
     code { font-family: var(--font-mono); background: rgba(0,0,0,.05); padding: 2px 6px; border-radius: 4px; font-size: 0.85em; }
   </style>
 </head>
@@ -278,6 +285,113 @@
         <div class="sb-item"><span class="mi">check_circle</span>Projecten</div>
         <div class="sb-item"><span class="mi">description</span>Offertes</div>
         <div class="sb-item"><span class="mi">receipt_long</span>Facturen</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ICONEN -->
+  <section>
+    <h2>Iconen</h2>
+    <p class="lead">Material Symbols Rounded (wght 400). Inline 18–20px, headers 24px. Opacity 0.85 default, 1.0 op hover/active. Embed via <code style="font-family:var(--font-mono);font-size:var(--fs-xs);background:var(--surface-alt);padding:1px 6px;border-radius:4px">&lt;span class="mi"&gt;naam&lt;/span&gt;</code>.</p>
+
+    <div class="card">
+      <div class="icon-cat-title">Acties</div>
+      <div class="icon-grid">
+        <div class="icon-cell"><span class="mi">add</span><span class="name">add</span></div>
+        <div class="icon-cell"><span class="mi">add_circle</span><span class="name">add_circle</span></div>
+        <div class="icon-cell"><span class="mi">edit</span><span class="name">edit</span></div>
+        <div class="icon-cell"><span class="mi">edit_square</span><span class="name">edit_square</span></div>
+        <div class="icon-cell"><span class="mi">delete</span><span class="name">delete</span></div>
+        <div class="icon-cell"><span class="mi">save</span><span class="name">save</span></div>
+        <div class="icon-cell"><span class="mi">send</span><span class="name">send</span></div>
+        <div class="icon-cell"><span class="mi">close</span><span class="name">close</span></div>
+        <div class="icon-cell"><span class="mi">check</span><span class="name">check</span></div>
+        <div class="icon-cell"><span class="mi">content_copy</span><span class="name">content_copy</span></div>
+        <div class="icon-cell"><span class="mi">undo</span><span class="name">undo</span></div>
+        <div class="icon-cell"><span class="mi">restart_alt</span><span class="name">restart_alt</span></div>
+        <div class="icon-cell"><span class="mi">swap_horiz</span><span class="name">swap_horiz</span></div>
+        <div class="icon-cell"><span class="mi">autorenew</span><span class="name">autorenew</span></div>
+      </div>
+
+      <div class="icon-cat-title">Navigatie</div>
+      <div class="icon-grid">
+        <div class="icon-cell"><span class="mi">arrow_back</span><span class="name">arrow_back</span></div>
+        <div class="icon-cell"><span class="mi">chevron_left</span><span class="name">chevron_left</span></div>
+        <div class="icon-cell"><span class="mi">keyboard_arrow_down</span><span class="name">keyboard_arrow_down</span></div>
+        <div class="icon-cell"><span class="mi">expand_less</span><span class="name">expand_less</span></div>
+        <div class="icon-cell"><span class="mi">unfold_more</span><span class="name">unfold_more</span></div>
+        <div class="icon-cell"><span class="mi">more_vert</span><span class="name">more_vert</span></div>
+        <div class="icon-cell"><span class="mi">open_in_new</span><span class="name">open_in_new</span></div>
+        <div class="icon-cell"><span class="mi">logout</span><span class="name">logout</span></div>
+      </div>
+
+      <div class="icon-cat-title">Status</div>
+      <div class="icon-grid">
+        <div class="icon-cell"><span class="mi">check_circle</span><span class="name">check_circle</span></div>
+        <div class="icon-cell"><span class="mi">pending</span><span class="name">pending</span></div>
+        <div class="icon-cell"><span class="mi">schedule</span><span class="name">schedule</span></div>
+        <div class="icon-cell"><span class="mi">info</span><span class="name">info</span></div>
+        <div class="icon-cell"><span class="mi">lock</span><span class="name">lock</span></div>
+        <div class="icon-cell"><span class="mi">lock_open</span><span class="name">lock_open</span></div>
+        <div class="icon-cell"><span class="mi">visibility</span><span class="name">visibility</span></div>
+        <div class="icon-cell"><span class="mi">stop</span><span class="name">stop</span></div>
+        <div class="icon-cell"><span class="mi">star</span><span class="name">star</span></div>
+      </div>
+
+      <div class="icon-cat-title">Bedrijfsobjecten</div>
+      <div class="icon-grid">
+        <div class="icon-cell"><span class="mi">dashboard</span><span class="name">dashboard</span></div>
+        <div class="icon-cell"><span class="mi">person</span><span class="name">person</span></div>
+        <div class="icon-cell"><span class="mi">person_add</span><span class="name">person_add</span></div>
+        <div class="icon-cell"><span class="mi">person_off</span><span class="name">person_off</span></div>
+        <div class="icon-cell"><span class="mi">group</span><span class="name">group</span></div>
+        <div class="icon-cell"><span class="mi">work</span><span class="name">work</span></div>
+        <div class="icon-cell"><span class="mi">description</span><span class="name">description</span></div>
+        <div class="icon-cell"><span class="mi">receipt_long</span><span class="name">receipt_long</span></div>
+        <div class="icon-cell"><span class="mi">payment</span><span class="name">payment</span></div>
+        <div class="icon-cell"><span class="mi">task_alt</span><span class="name">task_alt</span></div>
+        <div class="icon-cell"><span class="mi">checklist</span><span class="name">checklist</span></div>
+        <div class="icon-cell"><span class="mi">label</span><span class="name">label</span></div>
+        <div class="icon-cell"><span class="mi">folder</span><span class="name">folder</span></div>
+        <div class="icon-cell"><span class="mi">folder_open</span><span class="name">folder_open</span></div>
+        <div class="icon-cell"><span class="mi">beach_access</span><span class="name">beach_access</span></div>
+        <div class="icon-cell"><span class="mi">calendar_month</span><span class="name">calendar_month</span></div>
+        <div class="icon-cell"><span class="mi">calendar_today</span><span class="name">calendar_today</span></div>
+        <div class="icon-cell"><span class="mi">link</span><span class="name">link</span></div>
+        <div class="icon-cell"><span class="mi">local_shipping</span><span class="name">local_shipping</span></div>
+        <div class="icon-cell"><span class="mi">rocket_launch</span><span class="name">rocket_launch</span></div>
+      </div>
+
+      <div class="icon-cat-title">Communicatie</div>
+      <div class="icon-grid">
+        <div class="icon-cell"><span class="mi">mail</span><span class="name">mail</span></div>
+        <div class="icon-cell"><span class="mi">phone</span><span class="name">phone</span></div>
+        <div class="icon-cell"><span class="mi">chat</span><span class="name">chat</span></div>
+        <div class="icon-cell"><span class="mi">chat_bubble</span><span class="name">chat_bubble</span></div>
+        <div class="icon-cell"><span class="mi">forum</span><span class="name">forum</span></div>
+        <div class="icon-cell"><span class="mi">add_comment</span><span class="name">add_comment</span></div>
+        <div class="icon-cell"><span class="mi">notes</span><span class="name">notes</span></div>
+        <div class="icon-cell"><span class="mi">notifications</span><span class="name">notifications</span></div>
+      </div>
+
+      <div class="icon-cat-title">Bestand &amp; media</div>
+      <div class="icon-grid">
+        <div class="icon-cell"><span class="mi">upload_file</span><span class="name">upload_file</span></div>
+        <div class="icon-cell"><span class="mi">upload</span><span class="name">upload</span></div>
+        <div class="icon-cell"><span class="mi">download</span><span class="name">download</span></div>
+        <div class="icon-cell"><span class="mi">attach_file</span><span class="name">attach_file</span></div>
+        <div class="icon-cell"><span class="mi">print</span><span class="name">print</span></div>
+        <div class="icon-cell"><span class="mi">add_a_photo</span><span class="name">add_a_photo</span></div>
+        <div class="icon-cell"><span class="mi">format_list_bulleted</span><span class="name">format_list_bulleted</span></div>
+        <div class="icon-cell"><span class="mi">format_list_numbered</span><span class="name">format_list_numbered</span></div>
+      </div>
+
+      <div class="icon-cat-title">Systeem &amp; instellingen</div>
+      <div class="icon-grid">
+        <div class="icon-cell"><span class="mi">settings</span><span class="name">settings</span></div>
+        <div class="icon-cell"><span class="mi">palette</span><span class="name">palette</span></div>
+        <div class="icon-cell"><span class="mi">mood</span><span class="name">mood</span></div>
+        <div class="icon-cell"><span class="mi">repeat</span><span class="name">repeat</span></div>
       </div>
     </div>
   </section>

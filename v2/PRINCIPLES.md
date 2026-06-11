@@ -211,6 +211,21 @@ Varianten: `.btn-primary` (accent bg) · `.btn-secondary` (white bg, accent bord
 - `wght: 400` (regular, matched Geist body)
 - Default size: 18-20px voor inline, 24px voor headers
 - Opacity 0.85 default, 1.0 op hover/active
+- Embed: `<span class="mi">naam</span>` — `.mi` zet font + variation-settings
+
+Canonieke iconenset (zie styleguide.html voor visuele preview):
+
+| Categorie | Iconen |
+|-----------|--------|
+| Acties | `add`, `add_circle`, `edit`, `edit_square`, `delete`, `save`, `send`, `close`, `check`, `content_copy`, `undo`, `restart_alt`, `swap_horiz`, `autorenew` |
+| Navigatie | `arrow_back`, `chevron_left`, `keyboard_arrow_down`, `expand_less`, `unfold_more`, `more_vert`, `open_in_new`, `logout` |
+| Status | `check_circle`, `pending`, `schedule`, `info`, `lock`, `lock_open`, `visibility`, `stop`, `star` |
+| Bedrijfsobjecten | `dashboard`, `person`, `person_add`, `person_off`, `group`, `work`, `description`, `receipt_long`, `payment`, `task_alt`, `checklist`, `label`, `folder`, `folder_open`, `beach_access`, `calendar_month`, `calendar_today`, `link`, `local_shipping`, `rocket_launch` |
+| Communicatie | `mail`, `phone`, `chat`, `chat_bubble`, `forum`, `add_comment`, `notes`, `notifications` |
+| Bestand &amp; media | `upload_file`, `upload`, `download`, `attach_file`, `print`, `add_a_photo`, `format_list_bulleted`, `format_list_numbered` |
+| Systeem | `settings`, `palette`, `mood`, `repeat` |
+
+Vuistregel: nieuwe iconen eerst toevoegen aan deze lijst (en in styleguide.html plaatsen) voor je ze in een app gebruikt — zo blijft de set consistent.
 
 ---
 
