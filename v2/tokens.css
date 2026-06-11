@@ -57,12 +57,15 @@
   --divider-soft:  #E8EAED;   /* Subtiele scheidingslijnen */
 
   /* ── Sidebar (GA4-stijl) ───────────────────────────────────── */
-  --sidebar-width:  240px;
-  --sidebar-bg:     #FFFFFF;
-  --sidebar-text:   #5F6368;
-  --sidebar-hover:  #F4F2F0;
-  --sidebar-active: #E8F0FE;
-  --sidebar-border: #E8EAED;
+  --sidebar-width:        240px;
+  --sidebar-bg:           #FFFFFF;
+  --sidebar-text:         #212832;   /* Inactieve menu-items — Jugoo CMS hard text */
+  --sidebar-text-active:  #0061f2;   /* Hover/actief — Jugoo CMS blauw */
+  --sidebar-icon:         #1f2933;   /* Inactieve icon-kleur (dark, niet grijs) */
+  --sidebar-icon-active:  #0061f2;
+  --sidebar-hover:        #F4F2F0;
+  --sidebar-active:       #E8F0FE;
+  --sidebar-border:       #E8EAED;
 
   /* ── Radii ─────────────────────────────────────────────────── */
   --radius-sm:     4px;

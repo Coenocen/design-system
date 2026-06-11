@@ -90,9 +90,12 @@
     .sb-brand span { display:block; font-size: 0.7rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing:1px; margin-top:2px; font-weight: var(--fw-medium); }
     .sb-nav { padding: var(--sp-3) 0; }
     .sb-section { padding: 12px 20px 4px; font-size:10px; font-weight: var(--fw-semi); text-transform: uppercase; letter-spacing:1.5px; color: var(--text-tertiary); }
-    .sb-item { display:flex; align-items:center; gap:12px; padding:10px 20px; color: var(--text-secondary); font-size:13.5px; cursor:pointer; transition: all var(--transition); border-left: 3px solid transparent; }
-    .sb-item:hover { background: var(--sidebar-hover); color: var(--text-primary); }
-    .sb-item.on { background: var(--sidebar-active); color: var(--accent); font-weight: var(--fw-medium); border-left-color: var(--accent); }
+    .sb-item { display:flex; align-items:center; gap:12px; padding:10px 20px; color: var(--sidebar-text); font-size:0.9rem; font-weight: 400; cursor:pointer; transition: all var(--transition); border-left: 3px solid transparent; }
+    .sb-item .mi { color: var(--sidebar-icon); font-size: 20px; }
+    .sb-item:hover { background: var(--sidebar-hover); color: var(--sidebar-text-active); }
+    .sb-item:hover .mi { color: var(--sidebar-icon-active); }
+    .sb-item.on { background: var(--sidebar-active); color: var(--sidebar-text-active); font-weight: 600; border-left-color: var(--sidebar-text-active); }
+    .sb-item.on .mi { color: var(--sidebar-icon-active); }
 
     .tabs { display:flex; border-bottom: 2px solid var(--divider-soft); }
     .tab { padding: 12px 20px; color: var(--text-secondary); font-size: 0.9rem; font-weight: var(--fw-medium); border-bottom: 3px solid transparent; cursor:pointer; margin-bottom:-2px; }

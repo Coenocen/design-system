@@ -196,13 +196,23 @@ Regel: **groen = nieuw aanmaken, blauw = uitvoeren/opslaan**. Apps moeten dit on
 - Footer: padding `sp-3 sp-5`, border-top `--divider-soft`
 - **Geen** backdrop-blur of glass-look
 
-### 5.6 Sidebar (GA4-stijl)
+### 5.6 Sidebar (Jugoo CMS-stijl)
 
 - Breedte: 240px
 - Background: wit
-- Nav items: full-width, `border-left: 3px solid transparent`
-- Active: border-left = `--accent`, bg = `--sidebar-active` (#E8F0FE), color = `--accent`
-- Section labels: 10px, uppercase, letter-spacing 1.5px, top-border tussen secties
+- Nav items: full-width, padding `10px 20px`, `border-left: 3px solid transparent`
+
+| Eigenschap | Inactief | Hover / Actief |
+|------------|----------|----------------|
+| Font-size | `0.9rem` (≈14.4px) | idem |
+| Font-weight | 400 | 600 |
+| Tekstkleur | `--sidebar-text` (`#212832`) | `--sidebar-text-active` (`#0061f2`) |
+| Icon-kleur | `--sidebar-icon` (`#1f2933`) | `--sidebar-icon-active` (`#0061f2`) |
+| Background | transparant | `--sidebar-active` (`#E8F0FE`) |
+| Border-left | transparant | 3px `--sidebar-text-active` |
+
+- Section labels: 10–11px, uppercase, letter-spacing 0.1em, top-border tussen secties
+- De sidebar gebruikt **niet** `--accent` — Jugoo-blauw (`#0061f2`) is gereserveerd voor navigatie-context en blijft consistent over apps
 
 ### 5.7 Top-bar (page header)
 
