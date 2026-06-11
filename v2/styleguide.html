@@ -3,475 +3,359 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Design System v2 — Styleguide</title>
+  <title>Coen Design System — Styleguide v2.1</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL@20..48,100..700,0..1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./tokens.css">
-  <link rel="stylesheet" href="./base.css">
-  <link rel="stylesheet" href="./components.css">
   <style>
-    body { background: var(--surface-subtle); }
-
-    .sg-wrap { max-width: 1100px; margin: 0 auto; padding: var(--sp-7); }
-
-    .sg-hero { margin-bottom: var(--sp-7); }
-    .sg-hero h1 { font-size: 2rem; font-weight: var(--fw-bold); margin-bottom: 6px; }
-    .sg-hero p  { color: var(--text-secondary); max-width: 640px; }
-    .sg-hero .version {
-      display: inline-block;
-      margin-top: var(--sp-2);
-      padding: 2px 10px;
-      background: var(--accent-100);
-      color: var(--accent-dark);
-      border-radius: var(--radius-pill);
-      font-size: var(--fs-xs);
-      font-weight: var(--fw-semi);
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-family);
+      background: var(--app-bg);
+      color: var(--text-primary);
+      line-height: 1.5;
+      font-size: var(--fs-sm);
+      padding-bottom: var(--sp-12);
     }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: var(--sp-8); }
 
-    .sg-section {
-      background: var(--surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-card);
-      padding: var(--sp-6) var(--sp-7);
-      margin-bottom: var(--sp-5);
-      box-shadow: var(--shadow-sm);
-    }
-    .sg-section h2 { font-size: var(--fs-md); font-weight: var(--fw-semi); margin-bottom: 4px; }
-    .sg-section .sg-lead { font-size: var(--fs-xs); color: var(--text-muted); margin-bottom: var(--sp-5); }
+    .top { background:#fff; border-bottom:1px solid var(--divider-soft); padding: var(--sp-3) var(--sp-8); position:sticky; top:0; z-index:50; }
+    .top h1 { font-size: var(--fs-h3); font-weight: var(--fw-semi); color: var(--text-primary); letter-spacing:-0.01em; }
+    .top p  { font-size: var(--fs-xs); color: var(--text-tertiary); margin-top:2px; }
+    .top em { color: var(--accent); font-style: normal; }
 
-    .sg-grid { display: grid; gap: var(--sp-3); }
-    .sg-cols-2 { grid-template-columns: 1fr 1fr; }
-    .sg-cols-3 { grid-template-columns: repeat(3, 1fr); }
-    .sg-cols-4 { grid-template-columns: repeat(4, 1fr); }
-    .sg-cols-6 { grid-template-columns: repeat(6, 1fr); }
+    section { margin-top: var(--sp-10); }
+    section > h2 { font-size: var(--fs-h2); font-weight: var(--fw-medium); color: var(--text-primary); letter-spacing:-0.015em; margin-bottom: var(--sp-2); }
+    section > .lead { color: var(--text-secondary); margin-bottom: var(--sp-5); }
 
-    .sg-swatch {
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      background: var(--surface);
-    }
-    .sg-swatch-color { height: 60px; }
-    .sg-swatch-label { padding: 8px 10px 2px; font-size: 10.5px; font-family: var(--font-mono); color: var(--text-secondary); }
-    .sg-swatch-value { padding: 0 10px 8px; font-size: 10px; font-family: var(--font-mono); color: var(--text-muted); }
+    .card { background:#fff; border:1px solid var(--divider-soft); border-radius: var(--radius); padding: var(--sp-5); }
 
-    .sg-row { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; }
-    .sg-label {
-      font-size: 10.5px; color: var(--text-muted);
-      text-transform: uppercase; letter-spacing: .5px;
-      margin-bottom: var(--sp-2); font-weight: var(--fw-semi);
-    }
-    .sg-demo {
-      padding: var(--sp-4);
-      background: var(--surface-subtle);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      margin-bottom: var(--sp-3);
-    }
-    .sg-code {
-      font-family: var(--font-mono); font-size: 11px;
-      color: var(--text-secondary);
-      background: var(--surface-sunken);
-      padding: 2px 6px; border-radius: var(--radius-sm);
-    }
-    .sg-type-demo {
-      padding: var(--sp-3) 0;
-      border-bottom: 1px solid var(--border-subtle);
-      display: flex; align-items: baseline; gap: var(--sp-4);
-    }
-    .sg-type-demo:last-child { border-bottom: none; }
-    .sg-type-demo .sg-type-label { min-width: 120px; font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
+    .grid { display:grid; gap: var(--sp-3); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-5 { grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); }
+    .grid-6 { grid-template-columns: repeat(6, 1fr); }
 
-    .sg-spacing-bar { background: var(--accent-300); border-radius: var(--radius-sm); }
+    .sw { background:#fff; border:1px solid var(--divider-soft); border-radius: var(--radius); overflow:hidden; }
+    .sw .col { height: 64px; }
+    .sw .meta { padding: var(--sp-2) var(--sp-3); }
+    .sw .name { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--text-secondary); }
+    .sw .hex { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--text-tertiary); margin-top:2px; }
 
-    .sg-radius-box {
-      width: 80px; height: 80px;
-      background: var(--accent-100);
-      border: 2px solid var(--accent);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 11px; font-weight: var(--fw-medium); color: var(--accent-dark);
-    }
+    .label { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; }
 
-    .sg-shadow-box {
-      width: 120px; height: 80px;
-      background: var(--surface);
-      border-radius: var(--radius-md);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 11px; color: var(--text-muted);
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap: var(--sp-2); height: 44px; padding: 0 var(--sp-5); border-radius: var(--radius-sm); border:1px solid transparent; font-family: var(--font-family); font-size: var(--fs-sm); font-weight: var(--fw-medium); cursor:pointer; transition: all var(--transition); }
+    .btn-primary { background: var(--accent); color:#fff; }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-secondary { background:#fff; color: var(--accent); border-color: var(--divider-soft); }
+    .btn-secondary:hover { background: var(--accent-light); }
+    .btn-danger { background: var(--rood); color:#fff; }
+    .btn-ghost { background: transparent; color: var(--text-secondary); }
+    .btn-ghost:hover { background: var(--surface-alt); color: var(--text-primary); }
+    .btn-sm { height: 40px; padding: 0 var(--sp-4); font-size: 0.85rem; }
+    .btn-lg { height: 48px; padding: 0 var(--sp-6); font-size: 0.95rem; }
+
+    input.demo {
+      width: 100%; height: 44px; padding: 0 var(--sp-3); border:1px solid var(--divider-soft);
+      border-radius: var(--radius-sm); font-family: var(--font-family); font-size: var(--fs-sm);
+      color: var(--text-primary); background:#fff; outline:none;
+      transition: border-color var(--transition), box-shadow var(--transition);
     }
+    input.demo:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,115,232,.15); }
+    input.demo::placeholder { color: var(--text-tertiary); }
+
+    .pill { display:inline-flex; align-items:center; padding: 2px 10px; border-radius:999px; font-size: var(--fs-xs); font-weight: var(--fw-semi); }
+    .pill-amber { background: var(--geel-light); color:#876020; }
+    .pill-blue  { background: var(--accent-light); color: var(--accent); }
+    .pill-green { background: var(--groen-light); color:#3a6f3a; }
+    .pill-red   { background: var(--rood-light); color:#9b3b1a; }
+    .pill-gray  { background:#eee; color: var(--text-secondary); }
+
+    .sp-bar { background: var(--accent); height: 16px; border-radius: var(--radius-sm); }
+
+    .type-row { display:grid; grid-template-columns: 200px 1fr; gap: var(--sp-5); align-items:baseline; padding: var(--sp-3) 0; border-bottom:1px solid var(--divider-soft); }
+    .type-row:last-child { border-bottom:none; }
+    .type-row .meta-col { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--text-tertiary); }
+    .type-row .meta-col strong { font-family: var(--font-family); color: var(--text-secondary); display:block; font-size:0.7rem; margin-top:2px; font-weight: var(--fw-regular); }
+
+    .sb-demo { width: 240px; background:#fff; border:1px solid var(--divider-soft); border-radius: var(--radius); overflow:hidden; }
+    .sb-brand { padding: var(--sp-5) var(--sp-5) var(--sp-4); border-bottom:1px solid var(--divider-soft); }
+    .sb-brand h3 { font-size: 1.125rem; font-weight: var(--fw-bold); color: var(--text-primary); letter-spacing:-0.5px; line-height:1.1; }
+    .sb-brand h3 em { color: var(--accent); font-style:normal; }
+    .sb-brand span { display:block; font-size: 0.7rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing:1px; margin-top:2px; font-weight: var(--fw-medium); }
+    .sb-nav { padding: var(--sp-3) 0; }
+    .sb-section { padding: 12px 20px 4px; font-size:10px; font-weight: var(--fw-semi); text-transform: uppercase; letter-spacing:1.5px; color: var(--text-tertiary); }
+    .sb-item { display:flex; align-items:center; gap:12px; padding:10px 20px; color: var(--text-secondary); font-size:13.5px; cursor:pointer; transition: all var(--transition); border-left: 3px solid transparent; }
+    .sb-item:hover { background: var(--sidebar-hover); color: var(--text-primary); }
+    .sb-item.on { background: var(--sidebar-active); color: var(--accent); font-weight: var(--fw-medium); border-left-color: var(--accent); }
+
+    .tabs { display:flex; border-bottom: 2px solid var(--divider-soft); }
+    .tab { padding: 12px 20px; color: var(--text-secondary); font-size: 0.9rem; font-weight: var(--fw-medium); border-bottom: 3px solid transparent; cursor:pointer; margin-bottom:-2px; }
+    .tab.on { color: var(--accent); border-bottom-color: var(--accent); font-weight: var(--fw-semi); }
+
+    .mi { font-family: 'Material Symbols Rounded'; font-weight: normal; font-style: normal; font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20; }
+    code { font-family: var(--font-mono); background: rgba(0,0,0,.05); padding: 2px 6px; border-radius: 4px; font-size: 0.85em; }
   </style>
 </head>
 <body>
-  <div class="sg-wrap">
 
-    <div class="sg-hero">
-      <h1>Design System</h1>
-      <span class="version">v2.0 · app-agnostisch</span>
-      <p style="margin-top:var(--sp-3)">Gedeeld design system voor alle apps van Coen. Tokens, base-stijlen en componenten. Gebruik als bron van waarheid — voeg ontbrekende patronen hier toe, niet in individuele apps.</p>
+<header class="top">
+  <h1>Coen Design System <em>v2.1</em></h1>
+  <p>Geist · Jugoo/GA4-stijl · App-agnostisch</p>
+</header>
+
+<div class="wrap">
+
+  <!-- KLEUREN -->
+  <section>
+    <h2>Kleuren</h2>
+    <p class="lead">Semantic tokens (gebruik deze in componenten) en primitieven.</p>
+
+    <p class="label" style="margin: var(--sp-4) 0 var(--sp-2)">Tekst-hi&euml;rarchie</p>
+    <div class="grid grid-5">
+      <div class="sw"><div class="col" style="background:#202124"></div><div class="meta"><div class="name">--text-primary</div><div class="hex">#202124</div></div></div>
+      <div class="sw"><div class="col" style="background:#3C4043"></div><div class="meta"><div class="name">--text-default</div><div class="hex">#3C4043</div></div></div>
+      <div class="sw"><div class="col" style="background:#5F6368"></div><div class="meta"><div class="name">--text-secondary</div><div class="hex">#5F6368</div></div></div>
+      <div class="sw"><div class="col" style="background:#80868B"></div><div class="meta"><div class="name">--text-tertiary</div><div class="hex">#80868B</div></div></div>
+      <div class="sw"><div class="col" style="background:#9AA0A6"></div><div class="meta"><div class="name">--text-disabled</div><div class="hex">#9AA0A6</div></div></div>
     </div>
 
-    <!-- KLEUREN -->
-    <div class="sg-section">
-      <h2>Kleuren — primitieven</h2>
-      <p class="sg-lead">Bouwstenen. Gebruik in tokens.css, niet direct in componenten.</p>
-
-      <div class="sg-label">Ink / neutraal</div>
-      <div class="sg-grid sg-cols-6" style="margin-bottom:var(--sp-5)">
-        <div class="sg-swatch"><div class="sg-swatch-color" style="background:var(--ink)"></div><div class="sg-swatch-label">--ink</div><div class="sg-swatch-value">#252628</div></div>
-        <div class="sg-swatch"><div class="sg-swatch-color" style="background:var(--ink-2)"></div><div class="sg-swatch-label">--ink-2</div><div class="sg-swatch-value">#57595c</div></div>
-        <div class="sg-swatch"><div class="sg-swatch-color" style="background:var(--ink-3)"></div><div class="sg-swatch-label">--ink-3</div><div class="sg-swatch-value">#919497</div></div>
-        <div class="sg-swatch"><div class="sg-swatch-color" style="background:var(--paper)"></div><div class="sg-swatch-label">--paper</div><div class="sg-swatch-value">#f5f5f5</div></div>
-        <div class="sg-swatch"><div class="sg-swatch-color" style="background:var(--paper-2)"></div><div class="sg-swatch-label">--paper-2</div><div class="sg-swatch-value">#e7e8e9</div></div>
-        <div class="sg-swatch"><div class="sg-swatch-color" style="background:var(--line)"></div><div class="sg-swatch-label">--line</div><div class="sg-swatch-value">#d5d7d8</div></div>
-      </div>
-
-      <div class="sg-label">Accent</div>
-      <div class="sg-grid sg-cols-4" style="margin-bottom:var(--sp-5)">
-        <div class="sg-swatch"><div class="sg-swatch-color" style="background:var(--accent-100)"></div><div class="sg-swatch-label">--accent-100</div><div class="sg-swatch-value">#f7c4bf</div></div>
-        <div class="sg-swatch"><div class="sg-swatch-color" style="background:var(--accent-300)"></div><div class="sg-swatch-label">--accent-300</div><div class="sg-swatch-value">#eb766a</div></div>
-        <div class="sg-swatch"><div class="sg-swatch-color" style="background:var(--accent)"></div><div class="sg-swatch-label">--accent</div><div class="sg-swatch-value">#e33b2a</div></div>
-        <div class="sg-swatch"><div class="sg-swatch-color" style="background:var(--accent-dark)"></div><div class="sg-swatch-label">--accent-dark</div><div class="sg-swatch-value">#c02920</div></div>
-      </div>
-
-      <div class="sg-label">Status</div>
-      <div class="sg-grid sg-cols-4">
-        <div class="sg-swatch"><div class="sg-swatch-color" style="background:var(--green)"></div><div class="sg-swatch-label">--green</div><div class="sg-swatch-value">#63b34b</div></div>
-        <div class="sg-swatch"><div class="sg-swatch-color" style="background:var(--amber)"></div><div class="sg-swatch-label">--amber</div><div class="sg-swatch-value">#f9c700</div></div>
-        <div class="sg-swatch"><div class="sg-swatch-color" style="background:var(--blue)"></div><div class="sg-swatch-label">--blue</div><div class="sg-swatch-value">#3996d2</div></div>
-        <div class="sg-swatch"><div class="sg-swatch-color" style="background:var(--purple)"></div><div class="sg-swatch-label">--purple</div><div class="sg-swatch-value">#a69cf3</div></div>
-      </div>
+    <p class="label" style="margin: var(--sp-5) 0 var(--sp-2)">Accent</p>
+    <div class="grid grid-3">
+      <div class="sw"><div class="col" style="background:#1A73E8"></div><div class="meta"><div class="name">--accent</div><div class="hex">#1A73E8 — Google blue</div></div></div>
+      <div class="sw"><div class="col" style="background:#1557B0"></div><div class="meta"><div class="name">--accent-hover</div><div class="hex">#1557B0</div></div></div>
+      <div class="sw"><div class="col" style="background:#E8F0FE;border:1px solid var(--divider-soft)"></div><div class="meta"><div class="name">--accent-light</div><div class="hex">#E8F0FE</div></div></div>
     </div>
 
-    <!-- SEMANTIC TOKENS -->
-    <div class="sg-section">
-      <h2>Semantic tokens</h2>
-      <p class="sg-lead">Gebruik deze in componenten. Dark mode zal deze overschrijven.</p>
-
-      <div class="sg-label">Tekst</div>
-      <div class="sg-grid sg-cols-3" style="margin-bottom:var(--sp-5)">
-        <div class="sg-demo"><div style="color:var(--text-primary); font-weight:500">Primary tekst</div><span class="sg-code">--text-primary</span></div>
-        <div class="sg-demo"><div style="color:var(--text-secondary); font-weight:500">Secondary tekst</div><span class="sg-code">--text-secondary</span></div>
-        <div class="sg-demo"><div style="color:var(--text-muted); font-weight:500">Muted tekst</div><span class="sg-code">--text-muted</span></div>
-      </div>
-
-      <div class="sg-label">Oppervlakken</div>
-      <div class="sg-grid sg-cols-3">
-        <div class="sg-demo" style="background:var(--surface); border:1px solid var(--border-subtle)">surface<br><span class="sg-code">--surface</span></div>
-        <div class="sg-demo" style="background:var(--surface-subtle)">surface-subtle<br><span class="sg-code">--surface-subtle</span></div>
-        <div class="sg-demo" style="background:var(--surface-sunken)">surface-sunken<br><span class="sg-code">--surface-sunken</span></div>
-      </div>
+    <p class="label" style="margin: var(--sp-5) 0 var(--sp-2)">Aanvullend (PostAds warm)</p>
+    <div class="grid grid-3">
+      <div class="sw"><div class="col" style="background:#E87C2A"></div><div class="meta"><div class="name">--oranje</div><div class="hex">#E87C2A</div></div></div>
+      <div class="sw"><div class="col" style="background:#D06B1F"></div><div class="meta"><div class="name">--oranje-hover</div><div class="hex">#D06B1F</div></div></div>
+      <div></div>
     </div>
 
-    <!-- TYPOGRAFIE -->
-    <div class="sg-section">
-      <h2>Typografie</h2>
-      <p class="sg-lead">Work Sans. UI gebruikt standaard <span class="sg-code">--fs-sm</span> (13px).</p>
-
-      <div class="sg-type-demo"><div class="sg-type-label">--fs-2xl · h1</div><div style="font-size:var(--fs-2xl); font-weight:600">Hoofdkop 24px</div></div>
-      <div class="sg-type-demo"><div class="sg-type-label">--fs-xl · h2</div><div style="font-size:var(--fs-xl); font-weight:600">Paginakop 20px</div></div>
-      <div class="sg-type-demo"><div class="sg-type-label">--fs-lg · h3</div><div style="font-size:var(--fs-lg); font-weight:600">Sectiekop 18px</div></div>
-      <div class="sg-type-demo"><div class="sg-type-label">--fs-md · body</div><div style="font-size:var(--fs-md)">Documenttekst 16px</div></div>
-      <div class="sg-type-demo"><div class="sg-type-label">--fs-sm · UI</div><div style="font-size:var(--fs-sm)">Interface-tekst 13px</div></div>
-      <div class="sg-type-demo"><div class="sg-type-label">--fs-xs · meta</div><div style="font-size:var(--fs-xs)">Labels/meta 11.5px</div></div>
+    <p class="label" style="margin: var(--sp-5) 0 var(--sp-2)">Status</p>
+    <div class="grid grid-6">
+      <div class="sw"><div class="col" style="background:#7CB77B"></div><div class="meta"><div class="name">--groen</div><div class="hex">#7CB77B</div></div></div>
+      <div class="sw"><div class="col" style="background:#e8f5e8;border:1px solid var(--divider-soft)"></div><div class="meta"><div class="name">--groen-light</div><div class="hex">#e8f5e8</div></div></div>
+      <div class="sw"><div class="col" style="background:#E8B84A"></div><div class="meta"><div class="name">--geel</div><div class="hex">#E8B84A</div></div></div>
+      <div class="sw"><div class="col" style="background:#fdf6e3;border:1px solid var(--divider-soft)"></div><div class="meta"><div class="name">--geel-light</div><div class="hex">#fdf6e3</div></div></div>
+      <div class="sw"><div class="col" style="background:#D4633A"></div><div class="meta"><div class="name">--rood</div><div class="hex">#D4633A</div></div></div>
+      <div class="sw"><div class="col" style="background:#fde8e2;border:1px solid var(--divider-soft)"></div><div class="meta"><div class="name">--rood-light</div><div class="hex">#fde8e2</div></div></div>
     </div>
 
-    <!-- SPACING -->
-    <div class="sg-section">
-      <h2>Spacing-schaal</h2>
-      <p class="sg-lead">4px-ritme. 8 waarden, geen ad-hoc afwijkingen.</p>
-      <div style="display:flex; flex-direction:column; gap:var(--sp-2)">
-        <div class="sg-row"><span class="sg-code" style="width:80px">--sp-1</span><div class="sg-spacing-bar" style="width:4px;  height:12px"></div><span style="color:var(--text-muted); font-size:var(--fs-xs)">4px</span></div>
-        <div class="sg-row"><span class="sg-code" style="width:80px">--sp-2</span><div class="sg-spacing-bar" style="width:8px;  height:12px"></div><span style="color:var(--text-muted); font-size:var(--fs-xs)">8px</span></div>
-        <div class="sg-row"><span class="sg-code" style="width:80px">--sp-3</span><div class="sg-spacing-bar" style="width:12px; height:12px"></div><span style="color:var(--text-muted); font-size:var(--fs-xs)">12px</span></div>
-        <div class="sg-row"><span class="sg-code" style="width:80px">--sp-4</span><div class="sg-spacing-bar" style="width:16px; height:12px"></div><span style="color:var(--text-muted); font-size:var(--fs-xs)">16px</span></div>
-        <div class="sg-row"><span class="sg-code" style="width:80px">--sp-5</span><div class="sg-spacing-bar" style="width:20px; height:12px"></div><span style="color:var(--text-muted); font-size:var(--fs-xs)">20px</span></div>
-        <div class="sg-row"><span class="sg-code" style="width:80px">--sp-6</span><div class="sg-spacing-bar" style="width:24px; height:12px"></div><span style="color:var(--text-muted); font-size:var(--fs-xs)">24px</span></div>
-        <div class="sg-row"><span class="sg-code" style="width:80px">--sp-7</span><div class="sg-spacing-bar" style="width:32px; height:12px"></div><span style="color:var(--text-muted); font-size:var(--fs-xs)">32px</span></div>
-        <div class="sg-row"><span class="sg-code" style="width:80px">--sp-8</span><div class="sg-spacing-bar" style="width:40px; height:12px"></div><span style="color:var(--text-muted); font-size:var(--fs-xs)">40px</span></div>
+    <p class="label" style="margin: var(--sp-5) 0 var(--sp-2)">Surfaces</p>
+    <div class="grid grid-4">
+      <div class="sw"><div class="col" style="background:#F4F2F0;border:1px solid var(--divider-soft)"></div><div class="meta"><div class="name">--app-bg / --creme</div><div class="hex">#F4F2F0</div></div></div>
+      <div class="sw"><div class="col" style="background:#FFFFFF;border:1px solid var(--divider-soft)"></div><div class="meta"><div class="name">--wit</div><div class="hex">#FFFFFF</div></div></div>
+      <div class="sw"><div class="col" style="background:#E8E0D8"></div><div class="meta"><div class="name">--creme-dark</div><div class="hex">#E8E0D8</div></div></div>
+      <div class="sw"><div class="col" style="background:#E8EAED"></div><div class="meta"><div class="name">--divider-soft</div><div class="hex">#E8EAED</div></div></div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAFIE -->
+  <section>
+    <h2>Typografie</h2>
+    <p class="lead">Geist (Vercel) — overal hetzelfde. Material Design schaal voor headings.</p>
+
+    <div class="card">
+      <div class="type-row"><div class="meta-col">--fs-h1 · h1<strong>28px / 1.75rem · weight 500</strong></div><div style="font-size: var(--fs-h1); font-weight: var(--fw-medium); letter-spacing:-0.02em">Page hero / hoofdkop</div></div>
+      <div class="type-row"><div class="meta-col">--fs-h2 · h2<strong>22px / 1.375rem · weight 500</strong></div><div style="font-size: var(--fs-h2); font-weight: var(--fw-medium); letter-spacing:-0.015em">Section header</div></div>
+      <div class="type-row"><div class="meta-col">--fs-h3 · h3<strong>18px / 1.125rem · weight 500</strong></div><div style="font-size: var(--fs-h3); font-weight: var(--fw-medium); letter-spacing:-0.01em">Card / sub-section</div></div>
+      <div class="type-row"><div class="meta-col">--fs-h4 · h4<strong>16px / 1rem · weight 500</strong></div><div style="font-size: var(--fs-h4); font-weight: var(--fw-medium); letter-spacing:-0.01em">Component title</div></div>
+      <div class="type-row"><div class="meta-col">--fs-md<strong>16px / 1rem</strong></div><div style="font-size: var(--fs-md)">Belangrijke labels, sub-titels</div></div>
+      <div class="type-row"><div class="meta-col">--fs-sm · body<strong>14px / 0.875rem</strong></div><div style="font-size: var(--fs-sm)">Body tekst — default voor knoppen, inputs en alle UI-tekst</div></div>
+      <div class="type-row"><div class="meta-col">--fs-xs · meta<strong>11.2px / 0.7rem</strong></div><div style="font-size: var(--fs-xs)">Badges, pills, meta-info, labels</div></div>
+    </div>
+
+    <p class="label" style="margin: var(--sp-5) 0 var(--sp-2)">Font weights</p>
+    <div class="card">
+      <div class="type-row"><div class="meta-col">--fw-regular · 400</div><div style="font-weight:400">Regular — default body tekst</div></div>
+      <div class="type-row"><div class="meta-col">--fw-medium · 500</div><div style="font-weight:500">Medium — knoppen, koppen</div></div>
+      <div class="type-row"><div class="meta-col">--fw-semi · 600</div><div style="font-weight:600">Semibold — sterke nadruk, active tabs</div></div>
+      <div class="type-row"><div class="meta-col">--fw-bold · 700</div><div style="font-weight:700">Bold — brand-naam, hoofdkoppen</div></div>
+    </div>
+  </section>
+
+  <!-- KNOPPEN -->
+  <section>
+    <h2>Knoppen</h2>
+    <p class="lead">44px default. Radius 4px. Geist medium 500.</p>
+
+    <div class="card">
+      <p class="label" style="margin-bottom: var(--sp-2)">Varianten</p>
+      <div style="display:flex; gap: var(--sp-2); flex-wrap:wrap">
+        <button class="btn btn-primary">Opslaan</button>
+        <button class="btn btn-secondary">Annuleren</button>
+        <button class="btn btn-danger">Verwijderen</button>
+        <button class="btn btn-ghost">Sluiten</button>
+      </div>
+
+      <p class="label" style="margin: var(--sp-5) 0 var(--sp-2)">Groottes</p>
+      <div style="display:flex; gap: var(--sp-2); align-items:center; flex-wrap:wrap">
+        <button class="btn btn-primary btn-sm">Sm — 40px</button>
+        <button class="btn btn-primary">Default — 44px</button>
+        <button class="btn btn-primary btn-lg">Lg — 48px</button>
+      </div>
+
+      <p class="label" style="margin: var(--sp-5) 0 var(--sp-2)">Met icoon</p>
+      <div style="display:flex; gap: var(--sp-2); flex-wrap:wrap">
+        <button class="btn btn-primary"><span class="mi">add</span>Nieuw bedrijf</button>
+        <button class="btn btn-secondary"><span class="mi">edit</span>Bewerken</button>
       </div>
     </div>
+  </section>
 
-    <!-- RADIUS -->
-    <div class="sg-section">
-      <h2>Radius</h2>
-      <p class="sg-lead">8px standaard. Consistentie boven creativiteit.</p>
-      <div class="sg-row">
-        <div><div class="sg-radius-box" style="border-radius:var(--radius-sm)">4px</div><div style="text-align:center; margin-top:6px"><span class="sg-code">--radius-sm</span></div></div>
-        <div><div class="sg-radius-box" style="border-radius:var(--radius-md)">8px</div><div style="text-align:center; margin-top:6px"><span class="sg-code">--radius-md</span></div></div>
-        <div><div class="sg-radius-box" style="border-radius:var(--radius-lg)">12px</div><div style="text-align:center; margin-top:6px"><span class="sg-code">--radius-lg</span></div></div>
-        <div><div class="sg-radius-box" style="border-radius:var(--radius-pill)">pill</div><div style="text-align:center; margin-top:6px"><span class="sg-code">--radius-pill</span></div></div>
-      </div>
-    </div>
+  <!-- INPUTS -->
+  <section>
+    <h2>Inputs</h2>
+    <p class="lead">44px hoogte. Blauwe focus-ring (3px). Placeholder in --text-tertiary.</p>
 
-    <!-- SCHADUW -->
-    <div class="sg-section">
-      <h2>Shadows</h2>
-      <p class="sg-lead">Vier niveaus, van subtiel tot overlay.</p>
-      <div class="sg-row">
-        <div><div class="sg-shadow-box" style="box-shadow:var(--shadow-sm)">sm</div><div style="text-align:center; margin-top:6px"><span class="sg-code">--shadow-sm</span></div></div>
-        <div><div class="sg-shadow-box" style="box-shadow:var(--shadow-md)">md</div><div style="text-align:center; margin-top:6px"><span class="sg-code">--shadow-md</span></div></div>
-        <div><div class="sg-shadow-box" style="box-shadow:var(--shadow-lg)">lg</div><div style="text-align:center; margin-top:6px"><span class="sg-code">--shadow-lg</span></div></div>
-        <div><div class="sg-shadow-box" style="box-shadow:var(--shadow-xl)">xl</div><div style="text-align:center; margin-top:6px"><span class="sg-code">--shadow-xl</span></div></div>
-      </div>
-    </div>
-
-    <!-- KNOPPEN -->
-    <div class="sg-section">
-      <h2>Knoppen</h2>
-      <p class="sg-lead">Varianten en maten. Gebruik <span class="sg-code">.btn</span> als basis.</p>
-
-      <div class="sg-label">Varianten</div>
-      <div class="sg-demo">
-        <div class="sg-row">
-          <button class="btn btn-primary">Primary</button>
-          <button class="btn btn-secondary">Secondary</button>
-          <button class="btn btn-ghost">Ghost</button>
-          <button class="btn btn-danger">Danger</button>
-          <button class="btn btn-primary" disabled>Disabled</button>
+    <div class="card">
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4)">
+        <div>
+          <label style="font-size: var(--fs-xs); color: var(--text-secondary); display:block; margin-bottom: var(--sp-1); font-weight: var(--fw-medium)">Naam</label>
+          <input type="text" class="demo" placeholder="bijv. ACME B.V.">
         </div>
-      </div>
-
-      <div class="sg-label">Maten</div>
-      <div class="sg-demo">
-        <div class="sg-row">
-          <button class="btn btn-primary btn-sm">Small</button>
-          <button class="btn btn-primary">Default</button>
-          <button class="btn btn-primary btn-md">Medium</button>
-          <button class="btn btn-primary btn-lg">Large</button>
-        </div>
-      </div>
-
-      <div class="sg-label">Met icon</div>
-      <div class="sg-demo">
-        <div class="sg-row">
-          <button class="btn btn-primary"><span class="mi">add</span>Nieuw item</button>
-          <button class="btn btn-secondary"><span class="mi">edit</span>Bewerken</button>
-          <button class="btn-icon" title="Meer"><span class="mi">more_vert</span></button>
+        <div>
+          <label style="font-size: var(--fs-xs); color: var(--text-secondary); display:block; margin-bottom: var(--sp-1); font-weight: var(--fw-medium)">E-mail</label>
+          <input type="email" class="demo" placeholder="naam@bedrijf.nl">
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- FORMULIEREN -->
-    <div class="sg-section">
-      <h2>Formulieren</h2>
-      <p class="sg-lead">Label boven, inputs 36px, focus = accent + ring.</p>
+  <!-- PILLS -->
+  <section>
+    <h2>Status pills</h2>
+    <p class="lead">Capsule-vorm (border-radius 999px). Vaste kleurkoppeling per status.</p>
 
-      <div class="sg-demo" style="max-width:480px">
-        <div class="field">
-          <label>Naam</label>
-          <input type="text" placeholder="Jouw naam">
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label>E-mail</label>
-            <input type="email" placeholder="jij@voorbeeld.nl">
-          </div>
-          <div class="field">
-            <label>Telefoon</label>
-            <input type="tel" placeholder="06 12 34 56 78">
-          </div>
-        </div>
-        <div class="field">
-          <label>Opmerking</label>
-          <textarea placeholder="Vrije tekst"></textarea>
-          <span class="field-hint">Maximaal 500 tekens.</span>
-        </div>
-        <div class="field">
-          <label>Met fout</label>
-          <input type="text" value="ongeldige waarde" style="border-color:var(--danger)">
-          <span class="field-error">Dit veld is verplicht.</span>
-        </div>
+    <div class="card" style="display:flex; gap: var(--sp-2); flex-wrap:wrap">
+      <span class="pill pill-gray">Concept</span>
+      <span class="pill pill-amber">Aangevraagd</span>
+      <span class="pill pill-blue">Verzonden</span>
+      <span class="pill pill-green">Goedgekeurd</span>
+      <span class="pill pill-green">Betaald</span>
+      <span class="pill pill-red">Afgewezen</span>
+      <span class="pill pill-red">Vervallen</span>
+    </div>
+  </section>
+
+  <!-- TABS -->
+  <section>
+    <h2>Tabs (cockpit-stijl)</h2>
+    <p class="lead">Container met 2px onderbalk. Tab active heeft 3px accent border-bottom.</p>
+
+    <div class="card" style="padding: 0">
+      <div class="tabs" style="padding: 0 var(--sp-5)">
+        <div class="tab on">Overzicht</div>
+        <div class="tab">Klanten</div>
+        <div class="tab">Projecten</div>
+        <div class="tab">Facturatie</div>
+      </div>
+      <div style="padding: var(--sp-5); color: var(--text-secondary)">Tab-inhoud verschijnt hier&hellip;</div>
+    </div>
+  </section>
+
+  <!-- SIDEBAR -->
+  <section>
+    <h2>Sidebar (GA4-stijl)</h2>
+    <p class="lead">240px breed. Wit. Full-width items met 3px linker-accent op active state.</p>
+
+    <div class="sb-demo">
+      <div class="sb-brand">
+        <h3>Jugoo <em>CRM</em></h3>
+        <span>PostAds</span>
+      </div>
+      <div class="sb-nav">
+        <div class="sb-item on"><span class="mi">dashboard</span>Dashboard</div>
+        <div class="sb-section">CRM</div>
+        <div class="sb-item"><span class="mi">groups</span>Klanten</div>
+        <div class="sb-item"><span class="mi">person</span>Medewerkers</div>
+        <div class="sb-section">Financieel</div>
+        <div class="sb-item"><span class="mi">check_circle</span>Projecten</div>
+        <div class="sb-item"><span class="mi">description</span>Offertes</div>
+        <div class="sb-item"><span class="mi">receipt_long</span>Facturen</div>
       </div>
     </div>
+  </section>
 
-    <!-- BADGES / PILLS / TAGS -->
-    <div class="sg-section">
-      <h2>Badges, pills, tags</h2>
-      <p class="sg-lead">Kleine statuselementen. Pills hebben min-width voor uitlijning.</p>
+  <!-- SPACING -->
+  <section>
+    <h2>Spacing schaal (4px-grid)</h2>
+    <p class="lead">Negen vaste waarden. Geen andere getallen gebruiken.</p>
 
-      <div class="sg-label">Badges</div>
-      <div class="sg-demo">
-        <div class="sg-row">
-          <span class="badge">Default</span>
-          <span class="badge badge-success">Actief</span>
-          <span class="badge badge-warning">Concept</span>
-          <span class="badge badge-info">Nieuw</span>
-          <span class="badge badge-danger">Vervallen</span>
-        </div>
+    <div class="card">
+      <div style="display:grid; grid-template-columns: 100px 1fr 80px; gap: var(--sp-2); align-items:center; padding: var(--sp-2) 0">
+        <div class="label">--sp-1</div><div class="sp-bar" style="width:4px"></div><div style="font-size:var(--fs-xs); color: var(--text-tertiary)">4px</div>
       </div>
-
-      <div class="sg-label">Pills</div>
-      <div class="sg-demo">
-        <div class="sg-row">
-          <span class="pill">Default</span>
-          <span class="pill pill-success">Betaald</span>
-          <span class="pill pill-warning">Openstaand</span>
-          <span class="pill pill-info">Verzonden</span>
-          <span class="pill pill-danger">Geweigerd</span>
-        </div>
+      <div style="display:grid; grid-template-columns: 100px 1fr 80px; gap: var(--sp-2); align-items:center; padding: var(--sp-2) 0">
+        <div class="label">--sp-2</div><div class="sp-bar" style="width:8px"></div><div style="font-size:var(--fs-xs); color: var(--text-tertiary)">8px</div>
       </div>
-
-      <div class="sg-label">Tags</div>
-      <div class="sg-demo">
-        <div class="sg-row">
-          <span class="tag">klant</span>
-          <span class="tag">v.i.p.</span>
-          <span class="tag">intern</span>
-        </div>
+      <div style="display:grid; grid-template-columns: 100px 1fr 80px; gap: var(--sp-2); align-items:center; padding: var(--sp-2) 0">
+        <div class="label">--sp-3</div><div class="sp-bar" style="width:12px"></div><div style="font-size:var(--fs-xs); color: var(--text-tertiary)">12px</div>
       </div>
-    </div>
-
-    <!-- ALERT -->
-    <div class="sg-section">
-      <h2>Alerts</h2>
-      <p class="sg-lead">Inline statusboodschap.</p>
-      <div style="display:flex; flex-direction:column; gap:var(--sp-2)">
-        <div class="alert alert-info"><span class="mi">info</span>Info: er staat een update klaar.</div>
-        <div class="alert alert-success"><span class="mi">check_circle</span>Gelukt! Je wijzigingen zijn opgeslagen.</div>
-        <div class="alert alert-warning"><span class="mi">warning</span>Let op: deze actie kun je niet ongedaan maken.</div>
-        <div class="alert alert-danger"><span class="mi">error</span>Fout: kon niet verbinden met de server.</div>
+      <div style="display:grid; grid-template-columns: 100px 1fr 80px; gap: var(--sp-2); align-items:center; padding: var(--sp-2) 0">
+        <div class="label">--sp-4</div><div class="sp-bar" style="width:16px"></div><div style="font-size:var(--fs-xs); color: var(--text-tertiary)">16px</div>
+      </div>
+      <div style="display:grid; grid-template-columns: 100px 1fr 80px; gap: var(--sp-2); align-items:center; padding: var(--sp-2) 0">
+        <div class="label">--sp-5</div><div class="sp-bar" style="width:20px"></div><div style="font-size:var(--fs-xs); color: var(--text-tertiary)">20px</div>
+      </div>
+      <div style="display:grid; grid-template-columns: 100px 1fr 80px; gap: var(--sp-2); align-items:center; padding: var(--sp-2) 0">
+        <div class="label">--sp-6</div><div class="sp-bar" style="width:24px"></div><div style="font-size:var(--fs-xs); color: var(--text-tertiary)">24px</div>
+      </div>
+      <div style="display:grid; grid-template-columns: 100px 1fr 80px; gap: var(--sp-2); align-items:center; padding: var(--sp-2) 0">
+        <div class="label">--sp-8</div><div class="sp-bar" style="width:32px"></div><div style="font-size:var(--fs-xs); color: var(--text-tertiary)">32px</div>
+      </div>
+      <div style="display:grid; grid-template-columns: 100px 1fr 80px; gap: var(--sp-2); align-items:center; padding: var(--sp-2) 0">
+        <div class="label">--sp-10</div><div class="sp-bar" style="width:40px"></div><div style="font-size:var(--fs-xs); color: var(--text-tertiary)">40px</div>
+      </div>
+      <div style="display:grid; grid-template-columns: 100px 1fr 80px; gap: var(--sp-2); align-items:center; padding: var(--sp-2) 0">
+        <div class="label">--sp-12</div><div class="sp-bar" style="width:48px"></div><div style="font-size:var(--fs-xs); color: var(--text-tertiary)">48px</div>
       </div>
     </div>
+  </section>
 
-    <!-- CARDS -->
-    <div class="sg-section">
-      <h2>Kaarten</h2>
-      <p class="sg-lead">Basis-oppervlakte voor content.</p>
+  <!-- BORDERS + RADIUS + SHADOWS -->
+  <section>
+    <h2>Borders, radii &amp; schaduwen</h2>
+    <p class="lead">Altijd 1px solid var(--divider-soft). Drie radius-waarden, vier schaduw-niveaus.</p>
 
-      <div class="sg-grid sg-cols-2">
-        <div class="card">
-          <div class="card-header">Eenvoudige kaart</div>
-          <div class="card-body">
-            <p>Inhoud van de kaart. Gebruik <span class="sg-code">.card</span> voor standaard solide kaarten.</p>
-          </div>
-          <div class="card-footer">
-            <button class="btn btn-secondary btn-sm">Annuleer</button>
-            <button class="btn btn-primary btn-sm" style="margin-left:var(--sp-2)">Opslaan</button>
-          </div>
-        </div>
-
-        <div class="surface-glass" style="padding:var(--sp-5)">
-          <h3 style="margin-bottom:var(--sp-2)">Glass-variant</h3>
-          <p>Optioneel — voor apps met gekleurde achtergronden. Class: <span class="sg-code">.surface-glass</span>.</p>
-        </div>
-      </div>
+    <p class="label" style="margin-top: var(--sp-4); margin-bottom: var(--sp-2)">Border-radius</p>
+    <div style="display:flex; gap: var(--sp-3); flex-wrap:wrap">
+      <div style="width:80px; height:80px; background:#fff; border:1px solid var(--divider-soft); border-radius: var(--radius-sm); display:flex; align-items:center; justify-content:center; font-size: var(--fs-xs); color: var(--text-tertiary); font-family: var(--font-mono)">4px</div>
+      <div style="width:80px; height:80px; background:#fff; border:1px solid var(--divider-soft); border-radius: var(--radius); display:flex; align-items:center; justify-content:center; font-size: var(--fs-xs); color: var(--text-tertiary); font-family: var(--font-mono)">8px</div>
+      <div style="width:80px; height:80px; background:#fff; border:1px solid var(--divider-soft); border-radius: var(--radius-lg); display:flex; align-items:center; justify-content:center; font-size: var(--fs-xs); color: var(--text-tertiary); font-family: var(--font-mono)">12px</div>
+      <div style="width:80px; height:80px; background:#fff; border:1px solid var(--divider-soft); border-radius: 50%; display:flex; align-items:center; justify-content:center; font-size: var(--fs-xs); color: var(--text-tertiary); font-family: var(--font-mono)">50%</div>
+      <div style="width:160px; height:36px; background:#fff; border:1px solid var(--divider-soft); border-radius: 999px; display:flex; align-items:center; justify-content:center; font-size: var(--fs-xs); color: var(--text-tertiary); font-family: var(--font-mono)">999px (pill)</div>
     </div>
 
-    <!-- TABS -->
-    <div class="sg-section">
-      <h2>Tabs</h2>
-      <p class="sg-lead">Horizontale sectienavigatie.</p>
-      <div class="tabs">
-        <div class="tab active">Overzicht</div>
-        <div class="tab">Details</div>
-        <div class="tab">Historie</div>
-        <div class="tab">Instellingen</div>
-      </div>
+    <p class="label" style="margin: var(--sp-5) 0 var(--sp-2)">Schaduwen</p>
+    <div style="display:flex; gap: var(--sp-4); flex-wrap:wrap; padding: var(--sp-3) 0">
+      <div style="width:140px; height:80px; background:#fff; border-radius: var(--radius); box-shadow: var(--shadow-sm); display:flex; align-items:center; justify-content:center; font-size: var(--fs-xs); color: var(--text-secondary); font-family: var(--font-mono)">--shadow-sm</div>
+      <div style="width:140px; height:80px; background:#fff; border-radius: var(--radius); box-shadow: var(--shadow); display:flex; align-items:center; justify-content:center; font-size: var(--fs-xs); color: var(--text-secondary); font-family: var(--font-mono)">--shadow</div>
+      <div style="width:140px; height:80px; background:#fff; border-radius: var(--radius); box-shadow: var(--shadow-lg); display:flex; align-items:center; justify-content:center; font-size: var(--fs-xs); color: var(--text-secondary); font-family: var(--font-mono)">--shadow-lg</div>
+      <div style="width:140px; height:80px; background:#fff; border-radius: var(--radius); box-shadow: var(--shadow-ga4); display:flex; align-items:center; justify-content:center; font-size: var(--fs-xs); color: var(--text-secondary); font-family: var(--font-mono)">--shadow-ga4</div>
     </div>
+  </section>
 
-    <!-- TABLE -->
-    <div class="sg-section">
-      <h2>Tabel</h2>
-      <p class="sg-lead">Strakke datapresentatie met hover-rijen.</p>
-      <table class="table">
-        <thead>
-          <tr><th>Naam</th><th>Rol</th><th>Status</th><th>Actie</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Robbert van Dijk</td><td>Teamlead</td><td><span class="pill pill-success">Actief</span></td><td><button class="btn-icon"><span class="mi">more_vert</span></button></td></tr>
-          <tr><td>Nienke Bakker</td><td>Manager</td><td><span class="pill pill-warning">Afwezig</span></td><td><button class="btn-icon"><span class="mi">more_vert</span></button></td></tr>
-          <tr><td>Jason de Vries</td><td>Developer</td><td><span class="pill pill-success">Actief</span></td><td><button class="btn-icon"><span class="mi">more_vert</span></button></td></tr>
-        </tbody>
-      </table>
+  <!-- DON'TS -->
+  <section>
+    <h2>Niet doen</h2>
+    <div class="card" style="background: var(--rood-light); border-color: var(--rood)">
+      <ul style="margin-left: var(--sp-5); color: var(--text-default); line-height:1.7">
+        <li>Geen <code>style="font-size:13px"</code> &mdash; gebruik <code>var(--fs-sm)</code></li>
+        <li>Geen hardcoded kleuren &mdash; alleen via tokens.css</li>
+        <li>Geen ander font dan Geist (op deze tokens)</li>
+        <li>Geen border-radius 6px, 10px, etc. &mdash; alleen 4 / 8 / 12 / 50% / 999px</li>
+        <li>Geen spacing 5, 7, 11, 18px &mdash; afronden naar 4-grid</li>
+        <li>Geen eigen tokens.css per app &mdash; gebruik shared</li>
+      </ul>
     </div>
+  </section>
 
-    <!-- AVATAR -->
-    <div class="sg-section">
-      <h2>Avatars</h2>
-      <p class="sg-lead">Initialen of afbeelding.</p>
-      <div class="sg-row">
-        <span class="avatar avatar-sm">RB</span>
-        <span class="avatar">RB</span>
-        <span class="avatar avatar-lg" style="background:var(--accent); color:#fff">CB</span>
-        <span class="avatar avatar-xl" style="background:var(--blue-100); color:var(--blue)">NB</span>
-      </div>
-    </div>
-
-    <!-- SKELETON -->
-    <div class="sg-section">
-      <h2>Skeleton / loading</h2>
-      <p class="sg-lead">Placeholder tijdens laden.</p>
-      <div class="sg-demo" style="max-width:400px">
-        <div class="skeleton skeleton-title"></div>
-        <div class="skeleton skeleton-text"></div>
-        <div class="skeleton skeleton-text" style="width:80%"></div>
-        <div class="skeleton skeleton-text" style="width:60%"></div>
-      </div>
-    </div>
-
-    <!-- TOOLTIP -->
-    <div class="sg-section">
-      <h2>Tooltip</h2>
-      <p class="sg-lead">Hover om te bekijken. Data-attribuut: <span class="sg-code">data-tip</span>.</p>
-      <div class="sg-demo">
-        <span class="tooltip" data-tip="Dit is een tooltip">Hover over mij</span>
-      </div>
-    </div>
-
-    <!-- MODAL (static showcase) -->
-    <div class="sg-section">
-      <h2>Modal</h2>
-      <p class="sg-lead">Hieronder een statische weergave van de modal-structuur (niet overlayed).</p>
-      <div style="position:relative; background:rgba(0,0,0,.1); padding:var(--sp-5); border-radius:var(--radius-md)">
-        <div class="modal" style="position:static; max-width:480px; margin:0 auto">
-          <div class="modal-header">
-            <h3>Item verwijderen?</h3>
-            <button class="btn-icon"><span class="mi">close</span></button>
-          </div>
-          <div class="modal-body">
-            <p>Weet je zeker dat je dit item wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.</p>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary">Annuleer</button>
-            <button class="btn btn-danger">Verwijder</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DROPDOWN (static showcase) -->
-    <div class="sg-section">
-      <h2>Dropdown</h2>
-      <p class="sg-lead">Contextmenu. In productie absolute positionering via JavaScript.</p>
-      <div style="position:relative; height:200px">
-        <div class="dropdown" style="position:static; display:inline-block">
-          <div class="dropdown-item"><span class="mi mi-sm">edit</span>Bewerken</div>
-          <div class="dropdown-item"><span class="mi mi-sm">content_copy</span>Dupliceren</div>
-          <div class="dropdown-item"><span class="mi mi-sm">archive</span>Archiveren</div>
-          <div class="dropdown-divider"></div>
-          <div class="dropdown-item danger"><span class="mi mi-sm">delete</span>Verwijderen</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TOAST (static) -->
-    <div class="sg-section">
-      <h2>Toasts</h2>
-      <p class="sg-lead">Tijdelijke feedback. Normaal absoluut gepositioneerd onderaan.</p>
-      <div style="display:flex; flex-direction:column; gap:var(--sp-2); align-items:flex-start">
-        <div class="toast" style="position:static; transform:none">Standaardbericht</div>
-        <div class="toast toast-success" style="position:static; transform:none">Opgeslagen</div>
-        <div class="toast toast-warning" style="position:static; transform:none">Bijna quota bereikt</div>
-        <div class="toast toast-info" style="position:static; transform:none">Nieuwe update beschikbaar</div>
-        <div class="toast toast-danger" style="position:static; transform:none">Kon niet opslaan</div>
-      </div>
-    </div>
-
-    <div class="sg-section" style="text-align:center; color:var(--text-muted); font-size:var(--fs-xs)">
-      Design System v2.0 · <span class="sg-code">~/design-system/v2/</span>
-    </div>
-
-  </div>
+</div>
 </body>
 </html>

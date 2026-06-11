@@ -76,6 +76,17 @@
   /* ── Typografie ────────────────────────────────────────────── */
   --font-family:   'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   --font-mono:     'Geist Mono', 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  --fs-xs:         0.7rem;     /* 11.2px — badges, pills, meta-info */
+  --fs-sm:         0.875rem;   /* 14px   — body, knoppen, inputs */
+  --fs-md:         1rem;       /* 16px   — sub-titels */
+  --fs-h4:         1rem;       /* 16px   — h4 */
+  --fs-h3:         1.125rem;   /* 18px   — h3 */
+  --fs-h2:         1.375rem;   /* 22px   — h2 */
+  --fs-h1:         1.75rem;    /* 28px   — h1 */
+  --fw-regular:    400;
+  --fw-medium:     500;
+  --fw-semi:       600;
+  --fw-bold:       700;
 
   /* ── Spacing scale (4px-base) ──────────────────────────────── */
   --sp-1:   4px;
