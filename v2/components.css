@@ -8,17 +8,25 @@
    OPPERVLAKKEN — card, surface-glass
    ═══════════════════════════════════════════════════════════════ */
 
+/* Coen's stijlkeuze: platte kaarten met alleen een subtiele border —
+   geen schaduw. Matcht MijnCRM tabel-rijen. Hover geeft border-emphasis,
+   geen elevation. Apps die wel elevation willen kunnen .card-elevated
+   gebruiken (zie hieronder). */
 .card {
   background: var(--surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-card);
-  box-shadow: var(--shadow-sm);
   overflow: hidden;
-  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+  transition: border-color var(--transition-fast);
 }
-/* Klikbare card: hover-feedback. Apps kunnen ook .card-interactive of
-   data-clickable gebruiken — voor nu is hover universeel. */
-.card:hover { box-shadow: var(--shadow-md, var(--shadow-sm)); }
+.card:hover { border-color: var(--border-strong); }
+
+/* Opt-in: kaart met schaduw — alleen waar elevation echt nodig is
+   (modals, drop-overlays). */
+.card-elevated {
+  box-shadow: var(--shadow-sm);
+}
+.card-elevated:hover { box-shadow: var(--shadow-md, var(--shadow-sm)); }
 
 /* Utility: card met direct padding (zonder aparte header/body) */
 .card-padded { padding: var(--sp-5); }

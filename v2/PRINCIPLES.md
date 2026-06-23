@@ -349,3 +349,18 @@ Zie `MIGRATION.md` voor stappenplan (v1 → v2).
 - `v2/` — huidige standaard (Jugoo/GA4-stijl, Geist, Google-blauw)
 - Versie bumps: alleen breaking changes (kleurschema, font-family, etc.)
 - Tussentijdse wijzigingen (waarde-tweaks) blijven binnen dezelfde versie
+
+## Updates
+
+- **2026-06-23** — `.card` is platgeslagen: alleen subtiele border, géén
+  schaduw. Matcht de MijnCRM tabel-rij-stijl die Coen als standaard wil
+  doortrekken naar alle apps. Hover geeft border-emphasis (border-color
+  van --border-subtle → --border-strong), geen elevation. Apps die wél
+  schaduw willen kunnen `.card-elevated` opt-in gebruiken (alleen voor
+  modals, drop-overlays, échte hover-uit-de-laag situaties).
+- **2026-06-23** — ~30 missende tokens toegevoegd aan `tokens.css`
+  (--border-subtle/strong, --surface/-subtle/-sunken, --text-inverse,
+  --h-btn-*, --radius-btn/card, --bg-/fg-success/warning/info/danger,
+  --focus-ring, --lh-tight/normal, --glass-*). Hiermee zijn `.btn`,
+  `.card`, `.alert`, `.badge`, `.pill` en `.surface-glass` zelfstandig
+  bruikbaar.
