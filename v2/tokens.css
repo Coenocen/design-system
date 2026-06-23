@@ -105,5 +105,67 @@
   --sp-12:  48px;
 
   /* ── Transities ────────────────────────────────────────────── */
-  --transition:    0.2s ease;
+  --transition:        0.2s ease;
+  --transition-fast:   0.15s ease;
+  --transition-normal: 0.2s ease;
+
+  /* ── Surfaces (bg-lagen) ───────────────────────────────────── */
+  --surface:         #FFFFFF;   /* Card-achtergrond */
+  --surface-subtle:  #FAF7F2;   /* Iets warmer dan creme — alt-blokken in een card */
+  --surface-sunken:  #EEEAE3;   /* Verzonken / disabled / track */
+
+  /* ── Borders (MijnCRM-style kaders rondom kaarten) ─────────── */
+  --border-subtle:   #E8EAED;   /* Standaard kaart-border, identiek aan --divider-soft */
+  --border-strong:   #DADCE0;   /* Hover/active emphasis op kaarten */
+
+  /* ── Text-rol aanvullingen ─────────────────────────────────── */
+  --text-muted:      #80868B;   /* Subtiel — alias --text-tertiary */
+  --text-accent:     #1A73E8;   /* Link-tekst — alias --accent */
+  --text-inverse:    #FFFFFF;   /* Tekst op donkere achtergrond */
+
+  /* ── Status-paren (badge/alert/pill) ───────────────────────── */
+  --bg-success:      #e8f5e8;  --fg-success: #1e7a36;
+  --bg-warning:      #fdf6e3;  --fg-warning: #8a6914;
+  --bg-info:         #E8F0FE;  --fg-info:    #1557B0;
+  --bg-danger:       #fde8e2;  --fg-danger:  #b8522e;
+
+  /* ── Tints voor alert-borders ──────────────────────────────── */
+  --blue-100:        #D2E3FC;
+  --green-100:       #C8E6CB;
+  --amber-100:       #FCE8B2;
+
+  /* ── Danger als losse status ───────────────────────────────── */
+  --danger:          #D4633A;   /* Alias --rood */
+
+  /* ── Selection ─────────────────────────────────────────────── */
+  --accent-100:      #E8F0FE;
+
+  /* ── Component-maten ───────────────────────────────────────── */
+  --h-btn:           36px;
+  --h-btn-sm:        28px;
+  --h-btn-md:        36px;
+  --h-btn-lg:        44px;
+  --radius-btn:      8px;       /* alias --radius */
+  --radius-card:     8px;       /* alias --radius */
+
+  /* ── Focus / lijnhoogtes ───────────────────────────────────── */
+  --focus-ring:      0 0 0 3px rgba(26, 115, 232, 0.25);
+  --lh-tight:        1.25;
+  --lh-normal:       1.5;
+
+  /* ── Font alias (voor base.css refs) ───────────────────────── */
+  --font:            var(--font-family);
+
+  /* ── Extra typografie ──────────────────────────────────────── */
+  --fs-lg:           1.125rem;  /* alias --fs-h3 */
+  --fs-2xl:          1.75rem;   /* alias --fs-h1 */
+
+  /* ── Shadow medium ─────────────────────────────────────────── */
+  --shadow-md:       0 2px 8px rgba(0,0,0,0.08);
+
+  /* ── Glass (optioneel — voor apps met gradient-achtergrond) ── */
+  --glass-bg:        rgba(255,255,255,0.7);
+  --glass-border:    rgba(255,255,255,0.35);
+  --glass-blur:      20px;
+  --glass-shadow:    0 8px 32px rgba(0,0,0,0.08);
 }
