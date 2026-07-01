@@ -875,6 +875,7 @@
   align-items: center;
   gap: 12px;
   padding: 14px 24px;
+  min-height: 64px;
   background: #EFF6FF;
   /* Lichtblauw, matcht .brand-header-bar en de accent-kleur van
      interactieve elementen. Geen border-bottom — de tab-nav strip
