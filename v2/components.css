@@ -966,3 +966,101 @@
   font-size: 16px;
   color: inherit;
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SERVICE PITCH — sales-hero voor niet-gekoppelde diensten.
+   Split layout: tekst links (met Fraunces heading), foto rechts.
+   Herbruikbaar op elke tab waar een dienst nog aangeboden kan worden.
+   ═══════════════════════════════════════════════════════════════ */
+
+.pa-service-pitch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 48px 32px;
+  background: #fff;
+}
+.pa-service-pitch__content {
+  max-width: 520px;
+}
+.pa-service-pitch__title {
+  font-family: 'Fraunces', 'Georgia', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #18181B;
+  margin: 0 0 20px;
+}
+.pa-service-pitch__subtitle {
+  font-family: 'Geist', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #52525B;
+  margin: 0 0 28px;
+  max-width: 460px;
+}
+.pa-service-pitch__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  color: #18181B;
+  text-decoration: none;
+}
+.pa-service-pitch__cta:hover .pa-service-pitch__cta-arrow {
+  transform: translateX(4px);
+}
+.pa-service-pitch__cta-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #FFD400;
+  color: #18181B;
+  transition: transform 0.2s ease;
+}
+.pa-service-pitch__cta-arrow .material-symbols-rounded {
+  font-size: 20px;
+}
+.pa-service-pitch__visual {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #F4F4F5;
+}
+.pa-service-pitch__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Utility: marketing-heading kan ook los gebruikt worden. */
+.pa-marketing-heading {
+  font-family: 'Fraunces', 'Georgia', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: #18181B;
+}
+
+@media (max-width: 900px) {
+  .pa-service-pitch {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px 20px;
+  }
+  .pa-service-pitch__title { font-size: 32px; }
+}
