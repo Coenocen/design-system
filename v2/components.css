@@ -981,8 +981,6 @@
   align-items: center;
   padding: 48px 32px;
   background: #fff;
-  max-width: 960px;
-  margin: 0 auto;
 }
 .pa-service-pitch__content {
   max-width: 520px;
