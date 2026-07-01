@@ -1064,3 +1064,45 @@
   }
   .pa-service-pitch__title { font-size: 32px; }
 }
+
+/* Upload-varianten van de service-pitch visual. */
+.pa-service-pitch__visual { position: relative; }
+.pa-service-pitch__upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #D4D4D8;
+  border-radius: 16px;
+  color: #71717A;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  font-size: 14px;
+}
+.pa-service-pitch__upload:hover {
+  border-color: #18181B;
+  color: #18181B;
+  background: #FAFAFA;
+}
+.pa-service-pitch__edit {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  color: #18181B;
+  transition: background 0.2s;
+}
+.pa-service-pitch__edit:hover {
+  background: #fff;
+}
