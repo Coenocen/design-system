@@ -875,10 +875,12 @@
   align-items: center;
   gap: 12px;
   padding: 14px 24px;
-  background: var(--surface-subtle, #FAF7F2);
-  /* Geen border-bottom — de tab-nav strip er direct onder vormt de
-     natuurlijke scheidingslijn. Gebruik .pa-page-header--flush als je
-     'm plakt aan een sidebar of tegen de viewport-rand. */
+  background: #EFF6FF;
+  /* Lichtblauw, matcht .brand-header-bar en de accent-kleur van
+     interactieve elementen. Geen border-bottom — de tab-nav strip
+     er direct onder vormt de natuurlijke scheidingslijn.
+     Gebruik .pa-page-header--flush als je 'm plakt aan een sidebar
+     of tegen de viewport-rand. */
 }
 .pa-page-header--flush {
   border-top: 0;
