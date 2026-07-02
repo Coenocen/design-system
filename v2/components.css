@@ -876,10 +876,9 @@
   gap: 12px;
   padding: 14px 24px;
   min-height: 64px;
-  background: #EFF6FF;
-  /* Lichtblauw, matcht .brand-header-bar en de accent-kleur van
-     interactieve elementen. Geen border-bottom — de tab-nav strip
-     er direct onder vormt de natuurlijke scheidingslijn.
+  background: transparent;
+  /* Achtergrond bewust neutraal — de tab-nav strip er direct onder
+     vormt de natuurlijke scheidingslijn.
      Gebruik .pa-page-header--flush als je 'm plakt aan een sidebar
      of tegen de viewport-rand. */
 }
